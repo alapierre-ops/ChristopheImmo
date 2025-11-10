@@ -2,6 +2,10 @@
 import Layout from '../../layouts/Layout.astro';
 import propertiesData from '../../data/properties.json';
 import '../../styles/property-detail.css';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/thumbs';
 
 interface Property {
 	id: string;
@@ -34,7 +38,7 @@ if (!property) {
 
 <Layout title={property.title}>
 	<main>
-		<a href="/" class="back-link">
+		<a href="/" class="back-link" id="back-link">
 			<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
 				<path d="M19 12H5M12 19l-7-7 7-7"/>
 			</svg>
@@ -62,25 +66,27 @@ if (!property) {
 
 			{property.images && property.images.length > 0 && (
 				<div class="property-gallery">
-					<div class="main-image">
-						<img src={property.images[0]} alt={property.title} id="main-img" />
+					<div class="main-swiper" data-swiper="main">
+						<div class="swiper-wrapper">
+							{property.images.map((image, index) => (
+								<div class="swiper-slide" key={index}>
+									<img src={image} alt={`${property.title} - Image ${index + 1}`} />
+								</div>
+							))}
+						</div>
+						<div class="swiper-button-next"></div>
+						<div class="swiper-button-prev"></div>
+						<div class="swiper-pagination"></div>
 					</div>
 					{property.images.length > 1 && (
-						<div class="thumbnail-grid">
-							{property.images.slice(1, 5).map((image, index) => (
-								<button 
-									class="thumbnail" 
-									onclick={`document.getElementById('main-img').src = '${image}'`}
-									aria-label={`Voir l'image ${index + 2}`}
-								>
-									<img src={image} alt={`${property.title} - Image ${index + 2}`} />
-								</button>
-							))}
-							{property.images.length > 5 && (
-								<div class="thumbnail-more">
-									+{property.images.length - 5} autres
-								</div>
-							)}
+						<div class="thumbs-swiper" data-swiper="thumbs">
+							<div class="swiper-wrapper">
+								{property.images.map((image, index) => (
+									<div class="swiper-slide" key={index}>
+										<img src={image} alt={`${property.title} - Miniature ${index + 1}`} />
+									</div>
+								))}
+							</div>
 						</div>
 					)}
 				</div>
@@ -150,14 +156,26 @@ if (!property) {
 						<h3>Intéressé(e) ?</h3>
 						<p>Contactez-nous pour organiser une visite ou obtenir plus d'informations.</p>
 						<div class="contact-buttons">
-							<a href="mailto:contact@example.com" class="btn btn-primary">
+							<a 
+								href="mailto:christophe-lapierre@orange.fr" 
+								class="btn btn-primary"
+								id="email-button"
+								data-property-id={property.id}
+								data-property-title={property.title}
+							>
 								<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
 									<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
 									<polyline points="22,6 12,13 2,6"/>
 								</svg>
 								Envoyer un email
 							</a>
-							<a href="tel:+33123456789" class="btn btn-secondary">
+							<a 
+								href="tel:+33601767543" 
+								class="btn btn-secondary"
+								id="phone-button"
+								data-property-id={property.id}
+								data-property-title={property.title}
+							>
 								<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
 									<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
 								</svg>
@@ -170,4 +188,91 @@ if (!property) {
 		</div>
 	</main>
 </Layout>
+
+<script define:vars={{ propertyId: property.id, propertyTitle: property.title }}>
+	import Swiper from 'swiper';
+	import { Navigation, Pagination, Thumbs } from 'swiper/modules';
+	import { events } from '../../utils/posthog';
+	
+	events.propertyViewed(propertyId, propertyTitle);
+	
+	document.addEventListener('DOMContentLoaded', () => {
+		const mainSwiperEl = document.querySelector('[data-swiper="main"]');
+		const thumbsSwiperEl = document.querySelector('[data-swiper="thumbs"]');
+		
+		const backLink = document.getElementById('back-link');
+		if (backLink) {
+			backLink.addEventListener('click', () => {
+				events.backToListClicked();
+			});
+		}
+		
+		const emailButton = document.getElementById('email-button');
+		if (emailButton) {
+			emailButton.addEventListener('click', () => {
+				events.emailClicked(propertyId, propertyTitle);
+			});
+		}
+		
+		const phoneButton = document.getElementById('phone-button');
+		if (phoneButton) {
+			phoneButton.addEventListener('click', () => {
+				events.phoneClicked(propertyId, propertyTitle);
+			});
+		}
+		
+		if (mainSwiperEl && thumbsSwiperEl) {
+			const thumbsSwiper = new Swiper(thumbsSwiperEl, {
+				modules: [Thumbs],
+				spaceBetween: 10,
+				slidesPerView: 4,
+				watchSlidesProgress: true,
+				breakpoints: {
+					640: { slidesPerView: 4 },
+					768: { slidesPerView: 5 },
+					1024: { slidesPerView: 6 }
+				}
+			});
+			
+			const mainSwiper = new Swiper(mainSwiperEl, {
+				modules: [Navigation, Pagination, Thumbs],
+				spaceBetween: 10,
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				},
+				pagination: {
+					el: '.swiper-pagination',
+					clickable: true,
+				},
+				thumbs: {
+					swiper: thumbsSwiper,
+				},
+				on: {
+					slideChange: (swiper) => {
+						events.galleryImageChanged(propertyId, swiper.activeIndex);
+					}
+				}
+			});
+		} else if (mainSwiperEl) {
+			const mainSwiper = new Swiper(mainSwiperEl, {
+				modules: [Navigation, Pagination],
+				spaceBetween: 10,
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				},
+				pagination: {
+					el: '.swiper-pagination',
+					clickable: true,
+				},
+				on: {
+					slideChange: (swiper) => {
+						events.galleryImageChanged(propertyId, swiper.activeIndex);
+					}
+				}
+			});
+		}
+	});
+</script>
 

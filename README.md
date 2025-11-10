@@ -13,6 +13,8 @@ Ce site permet de présenter une liste de propriétés à louer avec leurs déta
 ## 🚀 Technologies utilisées
 
 - **Astro** - Framework web moderne pour des sites statiques rapides
+- **Swiper.js** - Galerie d'images interactive avec navigation
+- **PostHog** - Analytics et suivi des visites
 - **HTML/CSS** - Interface responsive et moderne
 - **JSON** - Stockage des données des propriétés
 
@@ -100,6 +102,31 @@ Pour ajouter ou modifier une propriété, éditez le fichier `src/data/propertie
 ```
 
 **Important :** Les images doivent être placées dans le dossier `public/images/` et référencées avec le chemin `/images/nom-du-fichier.jpg`
+
+## 📊 Analytics avec PostHog
+
+Le site utilise PostHog pour analyser les visites. Pour activer PostHog :
+
+1. Créez un compte sur [PostHog](https://posthog.com)
+2. Récupérez votre clé API (Project API Key)
+3. Créez un fichier `.env` en local :
+   ```
+   PUBLIC_POSTHOG_KEY=phc_votre_cle_api
+   ```
+
+Le tracking est automatiquement désactivé si la clé n'est pas configurée.
+
+### Événements trackés automatiquement
+
+Le site track automatiquement les événements suivants dans PostHog :
+
+- **`$pageview`** - Vue de page (home, property detail)
+- **`property_card_clicked`** - Clic sur une carte de propriété (avec `property_id` et `property_title`)
+- **`property_viewed`** - Vue d'une page de détails de propriété (avec `property_id` et `property_title`)
+- **`back_to_list_clicked`** - Clic sur le bouton retour à la liste
+- **`email_clicked`** - Clic sur le bouton email (avec `property_id` et `property_title`)
+- **`phone_clicked`** - Clic sur le bouton téléphone (avec `property_id` et `property_title`)
+- **`gallery_image_changed`** - Changement d'image dans la galerie (avec `property_id` et `image_index`)
 
 ## 🚢 Déploiement
 
