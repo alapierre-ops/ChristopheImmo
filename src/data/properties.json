@@ -1,0 +1,65 @@
+[
+  {
+    "id": "1",
+    "title": "Appartement 2 pièces - Centre-ville",
+    "address": "123 Rue de la République, 75001 Paris",
+    "price": 850,
+    "surface": 45,
+    "rooms": 2,
+    "description": "Bel appartement rénové au cœur de la ville, proche des transports.",
+    "images": [
+      "/images/property-1-1.jpg",
+      "/images/property-1-2.jpg",
+      "/images/property-1-3.jpg",
+      "/images/property-1-4.jpg",
+      "/images/property-1-5.jpg",
+      "/images/property-1-6.jpg",
+      "/images/property-1-7.jpg"
+    ],
+    "features": ["Chauffage central", "Ascenseur", "Balcon"]
+  },
+
+
+  
+  {
+    "id": "2",
+    "title": "Studio moderne - Quartier calme",
+    "address": "45 Avenue des Champs, 69000 Lyon",
+    "price": 650,
+    "surface": 30,
+    "rooms": 1,
+    "description": "Studio lumineux et moderne, idéal pour étudiant ou jeune actif.",
+    "images": [
+      "/images/property-1-1.jpg",
+      "/images/property-1-2.jpg",
+      "/images/property-1-3.jpg",
+      "/images/property-1-4.jpg",
+      "/images/property-1-5.jpg",
+      "/images/property-1-6.jpg",
+      "/images/property-1-7.jpg"
+    ],
+    "features": ["Meublé", "Internet inclus", "Parking"]
+  },
+
+
+  {
+    "id": "3",
+    "title": "Appartement 3 pièces - Quartier calme",
+    "address": "789 Rue de la Paix, 75000 Paris",
+    "price": 1200,
+    "surface": 60,
+    "rooms": 3,
+    "description": "Appartement spacieux et lumineux, idéal pour une famille.",
+    "images": [
+      "/images/property-1-1.jpg",
+      "/images/property-1-2.jpg",
+      "/images/property-1-3.jpg",
+      "/images/property-1-4.jpg",
+      "/images/property-1-5.jpg",
+      "/images/property-1-6.jpg",
+      "/images/property-1-7.jpg"
+    ],
+    "features": ["Chauffage central", "Ascenseur", "Balcon"]
+  }
+]
+
