@@ -1,21 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import propertiesData from '../data/properties.json';
+import IntroSection from '../components/IntroSection.astro';
+import InfoSection from '../components/InfoSection.astro';
+import VisitsSection from '../components/VisitsSection.astro';
+import { processProperties, type Property } from '../utils/properties';
 import '../styles/index.css';
 
-interface Property {
-	id: string;
-	title: string;
-	address: string;
-	price: number;
-	surface: number;
-	rooms: number;
-	description: string;
-	images: string[];
-	features: string[];
-}
-
-const properties: Property[] = propertiesData;
+const properties: Property[] = await processProperties(propertiesData);
 const totalProperties = properties.length;
 const averagePrice = Math.round(properties.reduce((sum, p) => sum + p.price, 0) / properties.length);
 ---
@@ -24,41 +16,18 @@ const averagePrice = Math.round(properties.reduce((sum, p) => sum + p.price, 0) 
 	<main>
 		<header class="header">
 			<div class="container">
-				<h1>Propriétés disponibles</h1>
-				<p class="subtitle">Découvrez notre sélection de biens immobiliers à la location</p>
+				<h1>Découvrez mes logements</h1>
+				<p class="subtitle">Pour étudiants et artistes</p>
 			</div>
 		</header>
 
 		<div class="container">
-			<section class="intro-section">
-				<div class="intro-content">
-					<h2>Bienvenue</h2>
-					<p>
-						Nous proposons une sélection de biens immobiliers de qualité, soigneusement choisis pour répondre à vos besoins. 
-						Que vous recherchiez un studio pour étudiant, un appartement familial ou un logement en centre-ville, 
-						nous avons ce qu'il vous faut. Tous nos biens sont disponibles immédiatement et prêts à vous accueillir.
-					</p>
-					<div class="stats">
-						<div class="stat-item">
-							<div class="stat-number">{totalProperties}</div>
-							<div class="stat-label">Propriétés</div>
-						</div>
-						<div class="stat-item">
-							<div class="stat-number">{averagePrice}€</div>
-							<div class="stat-label">Prix moyen</div>
-						</div>
-						<div class="stat-item">
-							<div class="stat-number">100%</div>
-							<div class="stat-label">Disponibles</div>
-						</div>
-					</div>
-				</div>
-			</section>
+			<IntroSection />
 
 			<section class="properties-section">
 				<div class="section-header">
-					<h2>Nos biens disponibles</h2>
-					<p>Parcourez notre catalogue de propriétés à louer</p>
+					<h2>Mes biens disponibles</h2>
+					<p>Consultez mon catalogue de propriétés à louer</p>
 				</div>
 
 				<div class="properties-grid">
@@ -98,7 +67,7 @@ const averagePrice = Math.round(properties.reduce((sum, p) => sum + p.price, 0) 
 									</svg>
 									{property.address}
 								</p>
-								<p class="property-description">{property.description}</p>
+								<p class="property-description">{property.shortDescription}</p>
 								<div class="property-details">
 									<span class="detail-item">
 										<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -118,36 +87,43 @@ const averagePrice = Math.round(properties.reduce((sum, p) => sum + p.price, 0) 
 								</div>
 								{property.features && property.features.length > 0 && (
 									<div class="property-features">
-										{property.features.slice(0, 3).map((feature) => (
+										{property.features.slice(0, 4).map((feature) => (
 											<span class="feature-tag">{feature}</span>
 										))}
 									</div>
 								)}
 								<div class="property-price">
-									{property.price} €/mois
+									{property.isColocation ? (
+										<>
+											<span class="colocation-badge-small">Colocation</span>
+											<span class="price-main">{property.colocationPrice || property.price} €/mois</span>
+											<span class="price-per-person">par personne</span>
+										</>
+									) : (
+										<>
+											{property.price} €/mois
+										</>
+									)}
+									{property.priceNote && (
+										<span class="water-included">{property.priceNote}</span>
+									)}
 								</div>
 							</div>
 						</a>
 					))}
 				</div>
 			</section>
+
+			<InfoSection />
+			<VisitsSection />
 		</div>
 
 		<footer class="footer">
 			<div class="container">
 				<div class="footer-content">
 					<div class="footer-section">
-						<h3>À propos</h3>
-						<p>
-							Nous proposons des biens immobiliers de qualité pour la location. 
-							Tous nos logements sont soigneusement sélectionnés et entretenus.
-						</p>
-					</div>
-					<div class="footer-section">
 						<h3>Contact</h3>
-						<p>
-							Pour toute question ou visite, n'hésitez pas à nous contacter.
-						</p>
+						<p>Pour toute information ou visite, n'hésitez pas à me contacter.</p>
 						<p>
 							<a href="mailto:christophe-lapierre@orange.fr">christophe-lapierre@orange.fr</a>
 						</p>
@@ -155,16 +131,9 @@ const averagePrice = Math.round(properties.reduce((sum, p) => sum + p.price, 0) 
 							<a href="tel:+33601767543">+33 6 01 76 75 43</a>
 						</p>
 					</div>
-					<div class="footer-section">
-						<h3>Informations</h3>
-						<p>
-							Tous nos biens sont disponibles immédiatement. 
-							Les visites peuvent être organisées sur rendez-vous.
-						</p>
-					</div>
 				</div>
 				<div class="footer-bottom">
-					<p>&copy; {new Date().getFullYear()} Propriétés à louer. Tous droits réservés.</p>
+					<p>&copy; {new Date().getFullYear()} Christophe Lapierre. Tous droits réservés.</p>
 				</div>
 			</div>
 		</footer>

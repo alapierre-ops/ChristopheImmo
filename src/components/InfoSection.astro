@@ -1,0 +1,134 @@
+---
+---
+
+<section class="info-section">
+	<div class="info-content">
+		<div class="info-header">
+			<svg class="info-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+				<circle cx="12" cy="12" r="10"/>
+				<line x1="12" y1="16" x2="12" y2="12"/>
+				<line x1="12" y1="8" x2="12.01" y2="8"/>
+			</svg>
+			<h3>À savoir</h3>
+		</div>
+		<ul class="info-list">
+			<li>
+				<svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+					<polyline points="20 6 9 17 4 12"/>
+				</svg>
+				<span>Hors période du Festival d'Avignon, les logements sont destinés prioritairement à la location meublée sous bail étudiant ou bail mobilité.</span>
+			</li>
+			<li>
+				<svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+					<polyline points="20 6 9 17 4 12"/>
+				</svg>
+				<span>Une caution émanant d'un tiers physique ou d'un organisme agréé (Visale, Garantme, Cautioneo) est requise lors de la constitution du dossier.</span>
+			</li>
+		</ul>
+	</div>
+</section>
+
+<style>
+	.info-section {
+		margin: 3rem 0;
+		padding: 0;
+		background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+		border-radius: 16px;
+		overflow: hidden;
+		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+	}
+
+	.info-content {
+		max-width: 900px;
+		margin: 0 auto;
+		padding: 2.5rem;
+		background: white;
+		margin: 2rem;
+		border-radius: 12px;
+	}
+
+	.info-header {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		margin-bottom: 2rem;
+		padding-bottom: 1rem;
+		border-bottom: 2px solid #e0e7ff;
+	}
+
+	.info-icon {
+		color: #667eea;
+		flex-shrink: 0;
+	}
+
+	.info-content h3 {
+		font-size: 1.5rem;
+		margin: 0;
+		color: #1a1a1a;
+		font-weight: 600;
+	}
+
+	.info-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 1.25rem;
+	}
+
+	.info-list li {
+		display: flex;
+		align-items: flex-start;
+		gap: 1rem;
+		font-size: 1.05rem;
+		line-height: 1.7;
+		color: #4a5568;
+		padding: 1rem;
+		background: #f8f9ff;
+		border-radius: 8px;
+		border-left: 3px solid #667eea;
+		transition: all 0.2s ease;
+	}
+
+	.info-list li:hover {
+		background: #f0f4ff;
+		transform: translateX(4px);
+	}
+
+	.check-icon {
+		color: #667eea;
+		flex-shrink: 0;
+		margin-top: 0.15rem;
+	}
+
+	.info-list li span {
+		flex: 1;
+	}
+
+	@media (max-width: 768px) {
+		.info-content {
+			padding: 1.5rem;
+			margin: 1rem;
+		}
+
+		.info-header {
+			margin-bottom: 1.5rem;
+		}
+
+		.info-content h3 {
+			font-size: 1.25rem;
+		}
+
+		.info-list li {
+			font-size: 0.95rem;
+			padding: 0.875rem;
+		}
+
+		.check-icon {
+			width: 18px;
+			height: 18px;
+		}
+	}
+</style>
+
