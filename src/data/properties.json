@@ -6,8 +6,8 @@
     "price": 500,
     "surface": 22,
     "rooms": 1,
-    "shortDescription": "Studio de charme avec eau, chauffage collectif et TEOM inclus dans les charges. Disponible en bail étudiant ou bail mobilité du 01/08/25 au 30/06/26.",
-    "longDescription": "Studio de style cubain \"El Cubanito\" avec eau, chauffage collectif et TEOM inclus dans les charges soit 500 € mensuel : situé à Avignon intra-muros disponible exclusivement en bail étudiant ou en bail mobilité du 01/08/25 jusqu'au 30/06/26 et composé d'un coin nuit / séjour, cuisine ouverte, salle d'eau et WC séparé.\n\n1/ Au cœur du quartier historique d'Avignon intra-muros le plus recherché (à moins de 500 m du Palais des Papes) et à proximité immédiate du PARKING des halles.\n\n2/ Au cinquième étage avec ascenseur (sur 6) d'un petit immeuble de charme haussmannien sécurisé (digicode + interphone) orienté côté est = CALME ASSURÉ.\n\n3/ Vue magique et imprenable sur les toits d'Avignon et le Palais des Papes.\n\nLe coin nuit dispose d'un lit confortable en 140 cm x 190 cm, d'un paravent pour l'isoler (selon votre souhait), d'une armoire de rangement et d'un meuble séparateur IKEA.\n\nLa cuisine est équipée des éléments électroménagers suivants :\n- Hotte – Four à catalyse – Plaques de cuisson vitrocéramique – Réfrigérateur congélateur – Micro-ondes – Grille pain et bouilloire – Cafetière électrique – Vaisselle et ustensiles de cuisine\n\nSont également mis à disposition :\n- Lave linge séchant\n- Dressing fonctionnel\n- Table ronde et chaises\n- TV Led 80 cm sur meuble\n- Aspirateur traîneau\n- Fer et planche à repasser\n- Ventilateur sur trépied\n\nEDF à votre charge ou sur forfait mensuel régularisable de 35 €\n\n- Option internet SFR : + 23 € / mois\n- Caution 1 mois : 500 €\n- Parking Relais gratuit (des Italiens) ou des Halles (payant) à proximité",
+    "shortDescription": "Offrez vous une parenthèse de charme dans ce studio d'inspiration typiquement cubaine. Bail étudiant ou mobilité du 01/08/26 au 30/06/27.",
+    "longDescription": "Offrez vous une parenthèse de charme dans ce studio d'inspiration typiquement cubaine.\nDès l'entrée, l'atmosphère chaleureuse et les touches caribéennes rappellent l'esprit de La Havane.\nUn lieu unique, propice pour un séjour confortable et dépaysant mêlant exotisme et perspective inoubliable sur le Palais des Papes.\n\n\"El Cubanito\" dispose en effet des meilleurs atouts pour vous accueillir paisiblement :\n\n1/ au cœur du quartier historique d'Avignon IM le plus recherché (à moins de 500 m du Palais des Papes) et à proximité immédiate du marché couvert et du parking des Halles.\n\n2/ exclusivement en bail étudiant ou mobilité du 01/08/26 jusqu'au 30/06/27 avec eau et chauffage collectif inclus dans les charges.\n\n3/ au cinquième étage avec ascenseur (sur 6) d'un petit immeuble de charme haussmannien sécurisé (digicode + interphone) orienté côté Est = CALME ASSURÉ.\n\n4/ vue magique et imprenable sur les toits d'Avignon et le Palais des Papes.\n\nLe coin nuit bénéficie d'un lit confortable en 140 x 190 cm, d'un paravent pour l'isoler (selon votre souhait), d'une armoire de rangement et d'un meuble séparateur Ikéa.\n\nLa cuisine est équipée des éléments électroménagers suivants :\nHotte aspirante – Four à catalyse – Plaques vitrocéramiques de cuisson – Réfrigérateur/congélateur – Micro-ondes – Grille pain et bouilloire – Cafetière électrique – Vaisselle et ustensiles de cuisine.\n\nSont également mis à disposition :\n- Coin bureau amovible\n- Lave linge séchant\n- Dressing fonctionnel\n- Table ronde et chaises\n- TV Led 80 cm sur meuble\n- Aspirateur traîneau\n- Fer et planche à repasser\n- Ventilateur sur trépied\n\nEDF à votre charge ou sur forfait mensuel régularisable de 38 €\n\n- Option internet SFR : + 23 € / mois\n- Caution 1 mois : 500 €\n- Parking Relais des Italiens (gratuit avec navette) ou des Halles (payant) à proximité.",
     "imagesFolder": "Cubanito",
     "features": [
       "Ascenseur",
@@ -20,18 +20,19 @@
       "Vue sur le Palais des Papes",
       "Lave-linge séchant",
       "TV Led 80 cm",
+      "Coin bureau amovible",
       "Parking à proximité"
     ],
     "priceNote": "Eau, chauffage et TEOM inclus",
     "leaseType": "Bail étudiant ou bail mobilité",
-    "leasePeriod": "01/08/25 - 30/06/26",
+    "leasePeriod": "01/08/26 - 30/06/27",
     "floor": "5ème étage sur 6",
     "additionalCharges": {
-      "edf": "35 €/mois (forfait régularisable) ou à votre charge",
+      "edf": "38 €/mois (forfait régularisable) ou à votre charge",
       "internet": "23 €/mois (option SFR)",
       "deposit": "500 € (1 mois)"
     },
-    "parking": "Parking Relais gratuit (des Italiens) ou des Halles (payant) à proximité"
+    "parking": "Parking Relais des Italiens (gratuit avec navette) ou des Halles (payant) à proximité"
   },
 
 
@@ -42,13 +43,13 @@
   
   {
     "id": "2",
-    "title": "Nid d'Amour Intra-muros T2 étudiant(e) prox place Carnot",
-    "address": "Avignon intra-muros, proche place Carnot",
+    "title": "Nid d'Amour intra-muros T2 étudiant(e) prox place Carnot",
+    "address": "Avignon intra-muros, à environ 300 m du Palais des Papes",
     "price": 510,
     "surface": 23,
     "rooms": 2,
-    "shortDescription": "Appartement de charme totalement refait à neuf CLIMATISÉ au cœur du quartier historique d'Avignon. Bail meublé étudiant du 01/08/25 au 30/06/26.",
-    "longDescription": "Appartement de charme totalement refait à neuf CLIMATISÉ composé d'un salon/séjour, cuisine ouverte, une chambre, une salle d'eau et des toilettes séparées au cœur du quartier historique d'Avignon le plus recherché.\n\nBail meublé étudiant exclusivement disponible du 1er Août 2025 au 30 Juin 2026.\n\nLa chambre dispose d'un lit 140 cm x 190 cm neuf et d'un meuble de rangement à tiroirs.\n\nLa cuisine est équipée des éléments suivants :\n- Four à pyrolyse\n- Plaque de cuisson vitrocéramique\n- Hotte\n- Réfrigérateur congélateur\n- Micro ondes\n- Cafetière électrique\n- Grille pain et bouilloire\n- Vaisselle nécessaire\n\nSont également mis à disposition :\n- Lave linge\n- Canapé 2 places\n- Table et 4 chaises\n- TV LED 80 cm\n- Dressing\n- Interphone\n- Radiateur électrique\n- Climatisation réversible\n\nLes fenêtres du séjour et de la salle d'eau sont en double vitrage isolant et donnent au 3ème étage sur la cour intérieure = CALME ASSURÉ !\n\nEau et TEOM INCLUS.\n\nEDF à votre charge ou sur forfait mensuel régularisable de 55 €\n\nOption internet SFR : + 23 € / mois\n\nCaution : 510 €",
+    "shortDescription": "Appartement de charme totalement refait à neuf climatisé au cœur du quartier historique d'Avignon. Bail meublé étudiant du 01/08/26 au 30/06/27.",
+    "longDescription": "Appartement de charme totalement refait à neuf climatisé composé d'un coin salon/séjour, cuisine ouverte, une chambre, une salle d'eau et des toilettes séparées au cœur du quartier historique d'Avignon le plus recherché (à 300 mètres seulement du Palais des Papes).\n\nBail étudiant meublé disponible exclusivement à partir du 1er Août 2026 jusqu'au 30 Juin 2027.\n\nLa chambre dispose d'un lit confortable en 140 x 190 cm et d'un meuble de rangement à tiroirs.\n\nLa cuisine est équipée des éléments suivants :\nHotte aspirante\nFour à pyrolyse\nPlaques vitrocéramiques de cuisson\nRéfrigérateur / congélateur\nMicro-ondes\nCafetière électrique\nGrille pain et bouilloire\nVaisselle et ustensiles de cuisine\n\nSont également mis à disposition :\nLave linge\nCanapé 2 places\nTable et 4 chaises\nTV Led 80 cm\nDressing\nInterphone\nRadiateur électrique\nClimatisation réversible\n\nLes fenêtres du séjour et de la salle d'eau sont en double vitrage isolant et donnent au 3 ième et dernier étage sur la cour intérieure = CALME ASSURÉ !\n\nEau et TEOM inclus dans les charges.\n\nEDF à votre charge ou sur forfait mensuel régularisable de 55 €\n\nOption internet SFR : + 23 € / mois\n\nCaution : 510 €\n\nParking Relais des Italiens (gratuit avec navette) ou des Halles (payant) à proximité.",
     "imagesFolder": "Pontmartin",
     "features": [
       "Climatisation réversible",
@@ -61,13 +62,14 @@
     ],
     "priceNote": "Eau, TEOM et WiFi inclus",
     "leaseType": "Bail meublé étudiant",
-    "leasePeriod": "01/08/25 - 30/06/26",
+    "leasePeriod": "01/08/26 - 30/06/27",
     "floor": "3ème étage",
     "additionalCharges": {
       "edf": "55 €/mois (forfait régularisable) ou à votre charge",
       "internet": "23 €/mois (option SFR)",
       "deposit": "510 €"
-    }
+    },
+    "parking": "Parking Relais des Italiens (gratuit avec navette) ou des Halles (payant) à proximité"
   },
 
 
@@ -78,13 +80,13 @@
 
   {
     "id": "3",
-    "title": "Traverse du Limas T2 intra-muros étudiant(e)/alternant(e)",
-    "address": "Avignon intra-muros, à deux pas du Lycée Mistral et à moins de 500 m du Palais des Papes",
+    "title": "Traverse du Limas T2 intra-muros étudiant(e) / alternant(e)",
+    "address": "Avignon intra-muros, à deux pas du Lycée Mistral et à moins de 300 m du Palais des Papes",
     "price": 530,
     "surface": 30,
     "rooms": 2,
-    "shortDescription": "Nid douillet de 30 m² refait à NEUF avec beaucoup de cachet (poutres apparentes, 3 m de hauteur). Bail meublé étudiant/alternant du 01/08/25 au 30/06/26.",
-    "longDescription": "Nid douillet de 30 m² refait à NEUF avec beaucoup de cachet (poutres apparentes au plafond = 3 m de hauteur) composé d'un salon/séjour, cuisine ouverte, une chambre, une salle d'eau et WC :\n\nBail meublé pour étudiant(e)/alternant(e) disponible uniquement du 1er Août 2025 au 30 Juin 2026.\n\n1/ Situé à deux pas du Lycée Mistral, du Lycée Vincent de Paul, du Conservatoire de danse et de la place Crillon\n\n2/ Au cœur du quartier historique d'Avignon intra-muros le plus recherché (à moins de 500 m du Palais des Papes) et à proximité immédiate du PARKING relais GRATUIT (avec navette gratuite) de l'île Piot.\n\n3/ Au second étage d'un petit immeuble sécurisé (digicode + interphone) orienté côté cour = CALME ASSURÉ.\n\nLa chambre dispose d'un lit en 140 cm x 190 cm neuf et est fermée par un rideau occultant et isolant de grande hauteur.\n\nLa cuisine est équipée des éléments électroménagers suivants :\n- Four à pyrolyse\n- Plaque de cuisson à induction\n- Hotte\n- Réfrigérateur congélateur\n- Micro ondes\n- Grille pain et bouilloire\n- Cafetière électrique\n- Vaisselle nécessaire\n\nSont également mis à disposition :\n- Climatisation mobile\n- Canapé 2 places convertible\n- Table et 3 chaises\n- TV Led 80 cm\n- Lave linge\n- Dressing\n\nEau et WIFI en illimité INCLUS.\n\nCaution : 530 €\n\nEDF à votre charge ou sur forfait mensuel de 50 € à régulariser en fin de bail.",
+    "shortDescription": "Nid douillet de 30 m² avec beaucoup de cachet (poutres apparentes, 3 mètres de hauteur)...",
+    "longDescription": "Nid douillet de 30 m2 meublé avec beaucoup de cachet (poutres apparentes au plafond = 3 m de hauteur) composé d'un coin salon/séjour, cuisine ouverte, une chambre, une salle d'eau avec WC :\n\nBail meublé pour étudiant(e)/alternant(e) disponible exclusivement à partir du 1er Août 2026 jusqu'au 30 Juin 2027.\n1/ situé à deux pas du Lycée Mistral, du Lycée Vincent de Paul, du Conservatoire de danse et de la magnifique place Crillon.\n2/ au cœur du quartier historique d'Avignon IM le plus recherché (à moins de 300 m du Palais des Papes) et à proximité immédiate du parking relais de l'île Piot (gratuit avec navette) ou des parkings des Allées de L'Oulle et de L'Oratoire (payant).\n3/ au second étage d'un petit immeuble sécurisé (digicode + interphone) orienté côté cour = CALME ASSURÉ.\n\nLa chambre (munie d'une fenêtre) dispose d'un lit en 140 x 190 cm récent et est fermée par un rideau occultant et isolant de grande hauteur.\nLa cuisine est équipée des éléments électroménagers suivants :\n- four à pyrolyse\n- plaque de cuisson à induction\n- hotte aspirante\n- réfrigérateur/congélateur\n- micro-ondes\n- grille pain et bouilloire\n- cafetière électrique\n- vaisselle et ustensiles de cuisine\n\nSont également mis à disposition :\n- climatisation mobile\n- canapé 2 places convertible\n- table et 3 chaises\n- TV Led 80 cm\n- lave linge\n- dressing\n\nEau, Teom et Wifi inclus.\n\nEDF à votre charge ou sur forfait mensuel de 57 € à régulariser en fin de bail.",
     "imagesFolder": "Limas",
     "features": [
       "Climatisation mobile",
@@ -99,12 +101,12 @@
     ],
     "priceNote": "Eau, TEOM et WIFI inclus",
     "leaseType": "Bail meublé étudiant/alternant",
-    "leasePeriod": "01/08/25 - 30/06/26",
+    "leasePeriod": "01/08/26 - 30/06/27",
     "floor": "2ème étage",
     "additionalCharges": {
-      "edf": "50 €/mois (forfait à régulariser) ou à votre charge"
+      "edf": "57 €/mois (forfait à régulariser) ou à votre charge"
     },
-    "parking": "Parking relais GRATUIT de l'île Piot avec navette gratuite à proximité"
+    "parking": "Parking relais de l'île Piot (gratuit avec navette) ou des parkings des Allées de L'Oulle et de L'Oratoire (payant) à proximité"
   },
 
 
@@ -118,12 +120,12 @@
   {
     "id": "4",
     "title": "Clos des Lierres T3/T4 Jeunes actifs(ves) prox IM / Gare Centre",
-    "address": "Avignon, près de la gare Centre, à 150 mètres des remparts",
+    "address": "Avignon, près de la gare Centre, à 150 m des remparts",
     "price": 820,
     "surface": 65,
     "rooms": 3,
     "shortDescription": "Beau T3/T4 de 65 m² climatisé tri-split très lumineux, situé dans une résidence calme près de la gare d'Avignon Centre. Bail étudiant ou mobilité.",
-    "longDescription": "Beau T3/T4 de 65 m² climatisé tri-split très lumineux, situé dans une résidence calme près de la gare d'Avignon Centre à seulement 150 mètres des remparts.\n\nBail individuel étudiant (01/09/25 au 30/06/26) séparé ou bail mobilité (à partir du 01/08/25) de 10 mois possible pour 2 étudiants(es) ou alternants(es) éligible APL.\n\nLe logement est situé au 3ème étage sur 4 dans un petit immeuble très calme et sécurisé.\n\nBus Chron'hop C2 (toutes les 12 minutes), 6 et 10 (arrêt Les Lierres) à 30 mètres de la résidence et 4 à 200 mètres (arrêt Gare Centre) = DIRECT UNIVERSITÉ, AGROPARC, GARE TGV, CAP SUD, HÔPITAL.\n\nTous commerces et centre commercial Leclerc à 3 minutes à pied seulement.\n\nStationnement facile et GRATUIT au pied de la résidence.\n\n1 salon/séjour de 22 m² composé d'une grande table et de 4 chaises, d'un canapé 3 places convertible et d'1 TV LED 80 cm avec meuble.\n\n1 cuisine séparée équipée de : un plan snack mural, 2 tabourets de bar, un réfrigérateur congélateur, 1 cuisinière table vitrocéramique, 1 four électrique, 1 lave vaisselle, 1 hotte, 1 micro onde, 1 bouilloire, 1 grille pain, 1 cafetière électrique, couverts et ustensiles de cuisine…\n\n2 grandes chambres de 14 m² avec climatisation INDIVIDUELLE équipées d'1 lit en 140 cm x 190 cm, d'1 commode, d'1 bureau et d'1 grand placard aménagé en dressing.\n\n1 salle d'eau avec meuble sous lavabo et lave linge\n1 WC séparé\n1 balcon de 4 m² aménagé en espace détente avec table bistro et chaises\n1 grande cave à disposition pour vélo ou scooter\n\nConnexion Internet fibre Orange\nChauffage individuel gaz\nFenêtres en double vitrage partout.\n\n379 € + 31 € de charges détaillées comme suit : eau (9 €), taxe ordures ménagères (7 €) et WIFI (15 €) soit 410 € mensuel par chambre.\n\nEDF et GDF restant à votre charge (ou sur provision mensuelle de 50 € à régulariser en fin de bail).",
+    "longDescription": "Beau T3/T4 de 65 m2 climatisé tri-split très lumineux, situé dans dans une résidence calme près de la gare d'Avignon Centre à seulement 150 mètres des remparts.\n\nBail individuel étudiant ou bail mobilité possible à partir du 01/08/26 jusqu'au 30/06/27 pour 2 étudiants(es) ou alternants(es) se connaissant de préférence.\n\nCe logement au design industriel et musicos est situé au 3 ième étage sur 4 dans un petit immeuble tranquille et sécurisé (digicode + visiophone) où le stationnement à proximité est gratuit.\n\nBus Chron'hop C2 (haute fréquence = 10 min), 6 et 10 (arrêt Les Lierres) à 30 m de la résidence\nNavette gratuite Cityzen République CZ et bus 4 à 200 m (arrêt Champfleury ou Gare Centre)\n= DIRECT AGROPARC et CAMPUS Hannah Arendt, COURTINE, FONTCOUVERTE, GARE TGV, HÔPITAL et HÔTEL DE VILLE.\n\nTous commerces et centre commercial Leclerc à moins de 3 minutes à pied seulement.\n\n1 grand salon-séjour climatisé de 22 m2 disposant d'une table en manguier et de 4 chaises, d'un canapé 3 places convertible et d'1 TV Led 80 cm sur meuble à roulettes.\n\n1 cuisine équipée séparée de 10 m2 (coin snack mural + tabourets, cuisinière table vitrocéramique, four à catalyse, hotte aspirante, réfrigérateur/congélateur….) avec 1 loggia attenante (lave linge + lave vaisselle)\n\n2 grandes chambres de 14 m2 avec climatisation INDIVIDUELLE dotées chacune d'1 lit double de confort ferme, d'1 commode, d'1 bureau et d'1 grand placard aménagé en dressing.\n\n1 salle d'eau avec meuble vasque et 1 WC séparé\n1 balcon de 4 m2 aménagé en espace détente\n1 cave à disposition pour vélo ou scooter\n\n3 unités de climatisation réversible + chaudière gaz de ville pour ECS et chauffage.\n\nConnexion Wifi Orange Fibre.\nChauffage individuel gaz de ville.\nFenêtres en double vitrage partout.\n\n379 € + 31 € par chambre de charges détaillées comme suit : eau (9 €), taxe ordures ménagères (7 €) et WIFI (15 €) soit 410 € mensuel.\n\nEDF et GDF restant à votre charge (ou sur provision mensuelle de 50 € à régulariser en fin de bail).",
     "imagesFolder": "Indus",
     "features": [
       "Climatisation tri-split",
@@ -136,20 +138,21 @@
       "Cave",
       "3ème étage sur 4",
       "Lave-linge",
-      "Stationnement gratuit"
+      "Stationnement gratuit",
+      "Digicode + Visiophone"
     ],
     "priceNote": "Eau, TEOM et WIFI inclus",
     "leaseType": "Bail individuel étudiant ou bail mobilité",
-    "leasePeriod": "01/08/25 - 30/06/26",
+    "leasePeriod": "01/08/26 - 30/06/27",
     "floor": "3ème étage sur 4",
     "isColocation": true,
     "colocationPrice": "410",
     "colocationDetails": "Pour 2 personnes (éligible APL)",
     "additionalCharges": {
-      "edf": "À votre charge (ou provision 100 €/mois à régulariser)",
-      "gdf": "À votre charge (ou provision 100 €/mois à régulariser)"
+      "edf": "À votre charge (ou provision 50 €/mois à régulariser)",
+      "gdf": "À votre charge (ou provision 50 €/mois à régulariser)"
     },
-    "parking": "Stationnement facile et GRATUIT au pied de la résidence"
+    "parking": "Stationnement gratuit à proximité"
   },
 
 
@@ -161,13 +164,13 @@
 
   {
     "id": "5",
-    "title": "Jardin de Valery T3 climatisé + garage sous sol - Saint Ruf",
-    "address": "Avignon, à 500 mètres de la gare routière, porte St Michel et quartier Saint Ruf",
+    "title": "Jardin de Valéry T3 climatisé avec garage sous sol - Saint Ruf",
+    "address": "Avignon, à 500 m de la gare routière, de la porte St Michel et du quartier Saint Ruf",
     "price": 870,
     "surface": 50,
     "rooms": 3,
-    "shortDescription": "Joli T3 de charme climatisé avec garage inclus. Colocation possible pour 2 personnes. Bail étudiant ou mobilité du 01/08/25 au 30/06/26.",
-    "longDescription": "Joli T3 de charme climatisé à seulement 500 mètres de la gare routière, de la porte St Michel et du quartier Saint Ruf :\n\nA) Bail individuel étudiant ou bail mobilité de 10 mois possible pour 2 personnes (éligible APL) à partir du 01/08/25 jusqu'au 30/06/26.\n\nB) Garage pour véhicule automobile en sous sol de la résidence INCLUS.\n\nC) Emplacement idéal pour profiter de l'animation de l'intra-muros avec la proximité des remparts.\n\nL'appartement qui est situé au troisième étage avec ASCENSEUR d'un petit immeuble sécurisé (interphone + digicode) devra être libéré impérativement pour le 30/06/2026.\n\n1 grand séjour de 25 m² avec canapé confortable et TV écran plat 100 cm.\n\n1 cuisine ouverte US avec table haute et 4 tabourets de bar toute équipée : réfrigérateur-congélateur, four électrique, hotte, plaque de cuisson à induction, lave vaisselle, micro-ondes, lave linge, cafetière électrique, grille pain, bouilloire, vaisselle...\n\n2 chambres avec literie récente de 12 m² (160 cm x 200 cm) et 10 m² (140 cm x 190 cm) avec dressing et bureau individuel.\n\n1 salle d'eau spacieuse et 1 WC séparé.\n\n1 terrasse avec mobilier de jardin de 5 m².\n\n1 local commun pour vélos en RDC\n\n1 cave individuelle au 5ème étage\n\nConvecteur électrique dans chaque chambre.\nCLIMATISATION réversible dans le salon/séjour.\nOrientation côté JARDIN = calme assuré !\n\nÀ louer de préférence à 2 personnes se connaissant déjà soit :\n445 € par colocataire CC pour la chambre de 12 m² avec eau, taxe ordures ménagères et WIFI INCLUS\n425 € par colocataire CC pour la chambre de 10 m² avec eau, taxe ordures ménagères et WIFI INCLUS\n\nEDF restant à votre charge.",
+    "shortDescription": "Joli T3 de charme avec garage inclus. Colocation pour 2 personnes se connaissant de préférence. Bail étudiant ou mobilité du 01/08/26 au 30/06/27.",
+    "longDescription": "Joli T3 de charme climatisé à 500 m seulement de la gare routière, de la porte St Michel et du quartier Saint Ruf :\n\nA) bail individuel étudiant ou bail mobilité de 10 mois possible pour 2 personnes (éligible APL) à partir du 01/08/26 jusqu'au 30/06/27.\n\nB) garage pour véhicule automobile en sous sol de la résidence inclus.\n\nC) emplacement idéal pour profiter de l'animation de l'intra-muros avec la proximité des remparts.\n\nCe logement qui est situé au 3ième étage sur 5 avec ascenseur d'un petit immeuble sécurisé (digicode + visiophone) devra être libéré impérativement pour le 30/06/27.\n\n1 grand séjour climatisé de 25 m2 avec canapé convertible et TV écran plat de 100 cm.\n\n1 cuisine US entièrement équipée avec : table haute + 4 tabourets de bar, hotte aspirante, four électrique, plaque de cuisson à induction, réfrigérateur-congélateur, lave vaisselle, micro-ondes, cafetière électrique, grille pain, bouilloire, vaisselle et ustensiles de cuisine...\n\n2 chambres avec literie récente de 12 m2 (160 x 200 cm) et 10 m2 (140 x 190 cm) avec dressing et bureau individuel.\n\n1 salle d'eau spacieuse avec lave linge et 1 WC séparé.\n\n1 terrasse de 5 m² avec mobilier de jardin offrant une vue sur le Mont Ventoux.\n\n1 local commun pour vélos en RDC.\n\n1 cave individuelle au 5 ième étage.\n\nConvecteur électrique en appoint dans chaque chambre.\nOrientation côté JARDIN intérieur = calme assuré !\n\nÀ louer de préférence à 2 personnes se connaissant déjà soit :\n\n445 € par colocataire CC pour la chambre de 12 m2 avec eau, Teom et Wifi inclus.\n\n425 € par colocataire CC pour la chambre de 10 m2 avec eau, Teom et Wifi inclus.\n\nEDF restant à votre charge.",
     "imagesFolder": "nationale",
     "features": [
       "Garage inclus",
@@ -179,21 +182,22 @@
       "Terrasse 5 m²",
       "Cave",
       "Local vélos",
-      "3ème étage",
+      "3ème étage sur 5",
       "Lave-linge",
-      "Interphone + Digicode"
+      "Digicode + Visiophone",
+      "Vue sur le Mont Ventoux"
     ],
     "priceNote": "Eau, TEOM et WiFi inclus",
     "leaseType": "Bail individuel étudiant ou bail mobilité",
-    "leasePeriod": "01/08/25 - 30/06/26",
-    "floor": "3ème étage avec ascenseur",
+    "leasePeriod": "01/08/26 - 30/06/27",
+    "floor": "3ème étage sur 5 avec ascenseur",
     "isColocation": true,
     "colocationPrice": "425-445",
     "colocationDetails": "445 € pour chambre 12 m² ou 425 € pour chambre 10 m² (par colocataire)",
     "additionalCharges": {
       "edf": "À votre charge"
     },
-    "parking": "Garage pour véhicule automobile en sous-sol INCLUS"
+    "parking": "Garage pour véhicule automobile en sous-sol inclus"
   },
 
 
@@ -208,13 +212,13 @@
 
   {
     "id": "6",
-    "title": "Logis de Cabassole - T3 IM - 2 étudiant(e)s - place des Carmes",
-    "address": "Avignon intra-muros, proche place des Carmes, école Jacques Lecoq et Université",
+    "title": "Logis de Cabassole - T3 IM - 2 étudiant(e)s / place des Carmes",
+    "address": "Avignon intra-muros, proche du Conservatoire de musique, de la place des Carmes, de l'école Jacques Lecoq et de l'Université Hannah Arendt",
     "price": 850,
     "surface": 60,
     "rooms": 3,
-    "shortDescription": "Joli T3 Intra-Muros de charme climatisé tri-split proche de l'Université. Colocation acceptée avec bail individuel étudiant séparé pour 2 étudiant(e)s/alternant(e)s.",
-    "longDescription": "Joli T3 Intra-Muros de charme climatisé tri-split proche de la place des Carmes, de l'école Jacques Lecoq et de l'Université Campus Hanna-Harendt disponible à partir du 01/08/2025 jusqu'au 30/06/26 :\n\n1/ Colocation acceptée avec bail individuel étudiant ou bail mobilité séparé éligible APL pour 2 étudiant(e)s/alternant(e)s.\n\n2/ Facilité de stationnement avec parking des italiens GRATUIT à moins de 800 mètres et navette Cityzen également gratuite au pied de l'immeuble.\n\nL'appartement qui est situé au second étage d'un petit immeuble sécurisé (interphone + digicode) devra être libéré impérativement pour le 30/06/2026.\n\n1 grand séjour climatisé de 27 m² avec coin bar, canapé confortable et TV écran plat 100 cm.\n\n1 cuisine ouverte US toute équipée : réfrigérateur-congélateur, lave vaisselle, hotte, plaque de cuisson, micro-ondes, mini-four, lave linge, cafetière électrique, grille pain, bouilloire, vaisselle...)\n\n2 chambres spacieuses avec climatisation individuelle (donnant côté cour pour davantage de calme et de fraîcheur) de 12 m² avec literie Queen Size (160 cm x 200 cm) récente avec dressing et bureau individuel.\n\n1 douche JAPONAISE tendance\n\n1 WC séparé discret.\n\nClimatisation réversible dans chaque pièce + double vitrage partout.\n\nEmplacement idéal pour profiter de l'animation du Cœur historique de l'intra-muros et de ses nombreux commerces !\n\n392 € + 33 € de charges détaillées comme suit : eau (10 €), TEOM (8 €) et WIFI (15 €) soit 425 € mensuel par chambre.\n\nEDF restant à votre charge.",
+    "shortDescription": "Joli T3 intra-muros de charme climatisé tri-split proche de l'Université. Colocation souhaitée avec bail individuel étudiant séparé pour 2 étudiant(e)s/alternant(e)s.",
+    "longDescription": "Joli T3 intra-muros de charme climatisé tri-split proche du Conservatoire de musique, de la place des Carmes, de l'école Jacques Lecoq et de l'Université Campus Hannah Arendt disponible à partir du 01/08/2026 jusqu'au 30/06/27 :\n\n1/ Colocation souhaitée avec bail individuel étudiant séparé éligible APL pour 2 étudiant(e)s/alternant(e)s se connaissant de préférence.\n\n2/ Emplacement idéal pour profiter de l'animation du Cœur historique de l'intra-muros et de ses nombreux commerces.\n\n3/ Stationnement aisé avec parking des Italiens gratuit à moins de 500 mètres et navette Cityzen circulant au pied de l'immeuble.\n\nCe logement qui est situé au second étage d'un petit immeuble sécurisé (digicode + interphone) devra être libéré impérativement pour le 30/06/27.\n\n1 grand séjour climatisé de 27 m2 avec coin bar, canapé confortable et TV écran plat 100 cm.\n\n1 cuisine ouverte US toute équipée : réfrigérateur-congélateur, lave vaisselle, hotte aspirante, plaque de cuisson à induction, micro-ondes, mini-four, lave linge, cafetière électrique, grille pain, bouilloire, vaisselle et ustensiles de cuisine...\n\n2 chambres spacieuses avec climatisation individuelle (donnant côté cour pour davantage de calme et de fraîcheur) de 12 m2 avec literie récente Queen Size (160 x 200 cm) avec dressing et bureau individuel.\n\n1 douche JAPONAISE tendance\n\n1 WC séparé discret.\n\nEau et connexion Wifi Orange inclus.\n\nClimatisation réversible dans chaque pièce + double vitrage partout.\n\n397 € + 33 € par chambre de charges détaillées comme suit : eau (10 €), taxes ordures ménagères (8 €) et WIFI (15 €) soit 425 € mensuel.\n\nEDF restant à votre charge.",
     "imagesFolder": "Carmes",
     "features": [
       "Climatisation tri-split",
@@ -230,7 +234,7 @@
     ],
     "priceNote": "Eau, TEOM et WIFI inclus",
     "leaseType": "Bail individuel étudiant ou bail mobilité",
-    "leasePeriod": "01/08/25 - 30/06/26",
+    "leasePeriod": "01/08/26 - 30/06/27",
     "floor": "2ème étage",
     "isColocation": true,
     "colocationPrice": "425",
@@ -238,7 +242,7 @@
     "additionalCharges": {
       "edf": "À votre charge"
     },
-    "parking": "Parking des Italiens GRATUIT à moins de 800 mètres, navette Cityzen gratuite au pied de l'immeuble"
+    "parking": "Parking des Italiens gratuit à moins de 500 mètres, navette Cityzen circulant au pied de l'immeuble"
   }
 ]
 
