@@ -554,29 +554,85 @@
 @media (max-width: 968px) {
 	.property-content-grid {
 		grid-template-columns: 1fr;
+		gap: 2rem;
 	}
 
 	.property-sidebar {
 		order: -1;
 	}
+
+	.info-card,
+	.contact-card {
+		padding: 1.5rem;
+	}
 }
 
 @media (max-width: 768px) {
+	.container {
+		padding: 0 1rem;
+	}
+
+	.back-link {
+		margin: 1rem 0 0.5rem;
+		padding: 0.5rem 0.75rem;
+		font-size: 0.9rem;
+	}
+
 	.property-header {
 		flex-direction: column;
+		gap: 1.5rem;
+		margin-bottom: 2rem;
+		padding-bottom: 1.5rem;
 	}
 
 	.property-title-section h1 {
-		font-size: 2rem;
+		font-size: 1.75rem;
+		line-height: 1.3;
+	}
+
+	.property-address {
+		font-size: 1rem;
+		margin-bottom: 0.75rem;
+	}
+
+	.property-badge {
+		font-size: 0.85rem;
+		padding: 0.4rem 0.8rem;
+	}
+
+	.property-price-large {
+		text-align: left;
+		width: 100%;
 	}
 
 	.price-amount {
-		font-size: 2.5rem;
+		font-size: 2.25rem;
+	}
+
+	.price-unit {
+		font-size: 1.1rem;
+	}
+
+	.colocation-badge {
+		font-size: 0.8rem;
+		padding: 0.35rem 0.9rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.colocation-details {
+		font-size: 0.85rem;
+		margin-top: 0.4rem;
+	}
+
+	.total-price-note {
+		font-size: 0.8rem;
+		margin-top: 0.4rem;
 	}
 
 	.gallery-main {
 		grid-template-columns: 1fr;
-		height: 400px;
+		height: 350px;
+		gap: 0;
 	}
 	
 	.gallery-grid {
@@ -589,20 +645,269 @@
 	}
 	
 	.gallery-nav-prev {
-		left: 1rem;
+		left: 0.75rem;
 	}
 	
 	.gallery-nav-next {
-		right: 1rem;
+		right: 0.75rem;
+	}
+
+	.image-overlay {
+		padding: 1rem;
+	}
+
+	.image-counter {
+		font-size: 0.8rem;
+		padding: 0.4rem 0.8rem;
+	}
+
+	.image-counter svg {
+		width: 16px;
+		height: 16px;
+	}
+
+	.view-all-btn {
+		padding: 0.6rem 1.2rem;
+		font-size: 0.85rem;
 	}
 	
 	.thumbnail-item {
-		width: 80px;
-		height: 80px;
+		width: 70px;
+		height: 70px;
+	}
+
+	.property-section {
+		margin-bottom: 2rem;
+	}
+
+	.property-section h2 {
+		font-size: 1.5rem;
+		margin-bottom: 0.75rem;
+	}
+
+	.property-description-text {
+		font-size: 1rem;
+		line-height: 1.7;
+	}
+
+	.property-description-text p {
+		margin-bottom: 1.25rem;
 	}
 
 	.features-grid {
 		grid-template-columns: 1fr;
+		gap: 0.75rem;
+	}
+
+	.feature-item {
+		padding: 0.6rem;
+		font-size: 0.95rem;
+	}
+
+	.info-card,
+	.contact-card {
+		padding: 1.25rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.info-card h3,
+	.contact-card h3 {
+		font-size: 1.25rem;
+		margin-bottom: 1rem;
+	}
+
+	.info-item {
+		padding: 0.75rem 0;
+		gap: 0.75rem;
+	}
+
+	.info-label {
+		font-size: 0.85rem;
+	}
+
+	.info-value {
+		font-size: 1.1rem;
+	}
+
+	.colocation-price-main {
+		font-size: 1.1rem;
+	}
+
+	.colocation-price-label {
+		font-size: 0.85rem;
+	}
+
+	.colocation-details-small {
+		font-size: 0.7rem;
+		margin-top: 0.4rem;
+	}
+
+	.total-price-small {
+		font-size: 0.8rem;
+		margin-top: 0.4rem;
+	}
+
+	.water-included {
+		font-size: 0.8rem;
+		margin-top: 0.3rem;
+	}
+
+	.contact-card p {
+		font-size: 0.95rem;
+		margin-bottom: 1.25rem;
+	}
+
+	.btn {
+		padding: 0.75rem 1.25rem;
+		font-size: 0.95rem;
+	}
+
+	.btn svg {
+		width: 16px;
+		height: 16px;
+	}
+}
+
+@media (max-width: 480px) {
+	.container {
+		padding: 0 0.75rem;
+	}
+
+	.back-link {
+		margin: 0.75rem 0 0.5rem;
+		padding: 0.4rem 0.6rem;
+		font-size: 0.85rem;
+	}
+
+	.property-header {
+		gap: 1rem;
+		margin-bottom: 1.5rem;
+		padding-bottom: 1rem;
+	}
+
+	.property-title-section h1 {
+		font-size: 1.5rem;
+	}
+
+	.property-address {
+		font-size: 0.9rem;
+		flex-wrap: wrap;
+	}
+
+	.property-address svg {
+		width: 16px;
+		height: 16px;
+	}
+
+	.property-price-large {
+		margin-top: 0.5rem;
+	}
+
+	.price-amount {
+		font-size: 2rem;
+	}
+
+	.price-unit {
+		font-size: 1rem;
+	}
+
+	.colocation-badge {
+		font-size: 0.75rem;
+		padding: 0.3rem 0.75rem;
+	}
+
+	.gallery-main {
+		height: 280px;
+		border-radius: 8px;
+	}
+
+	.gallery-nav-btn {
+		width: 36px;
+		height: 36px;
+	}
+
+	.gallery-nav-prev {
+		left: 0.5rem;
+	}
+
+	.gallery-nav-next {
+		right: 0.5rem;
+	}
+
+	.gallery-nav-btn svg {
+		width: 20px;
+		height: 20px;
+	}
+
+	.image-overlay {
+		padding: 0.75rem;
+	}
+
+	.image-counter {
+		font-size: 0.75rem;
+		padding: 0.35rem 0.7rem;
+	}
+
+	.view-all-btn {
+		padding: 0.5rem 1rem;
+		font-size: 0.8rem;
+	}
+
+	.gallery-thumbnails {
+		gap: 0.5rem;
+		padding: 0.75rem 0;
+	}
+
+	.thumbnail-item {
+		width: 60px;
+		height: 60px;
+	}
+
+	.property-section h2 {
+		font-size: 1.35rem;
+	}
+
+	.property-description-text {
+		font-size: 0.95rem;
+	}
+
+	.info-card,
+	.contact-card {
+		padding: 1rem;
+		border-radius: 10px;
+	}
+
+	.info-card h3,
+	.contact-card h3 {
+		font-size: 1.15rem;
+		margin-bottom: 0.875rem;
+	}
+
+	.info-item {
+		padding: 0.625rem 0;
+	}
+
+	.info-item svg {
+		width: 18px;
+		height: 18px;
+	}
+
+	.info-label {
+		font-size: 0.8rem;
+	}
+
+	.info-value {
+		font-size: 1rem;
+	}
+
+	.contact-buttons {
+		gap: 0.625rem;
+	}
+
+	.btn {
+		padding: 0.7rem 1.1rem;
+		font-size: 0.9rem;
+		gap: 0.4rem;
 	}
 }
 
@@ -727,10 +1032,20 @@
 		width: 40px;
 		height: 40px;
 	}
+
+	.fullscreen-close svg {
+		width: 20px;
+		height: 20px;
+	}
 	
 	.fullscreen-nav {
 		width: 48px;
 		height: 48px;
+	}
+
+	.fullscreen-nav svg {
+		width: 20px;
+		height: 20px;
 	}
 	
 	.fullscreen-prev {
@@ -749,6 +1064,75 @@
 		bottom: 1rem;
 		font-size: 0.9rem;
 		padding: 0.5rem 1rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.fullscreen-close {
+		top: 0.75rem;
+		right: 0.75rem;
+		width: 36px;
+		height: 36px;
+	}
+
+	.fullscreen-close svg {
+		width: 18px;
+		height: 18px;
+	}
+	
+	.fullscreen-nav {
+		width: 44px;
+		height: 44px;
+	}
+
+	.fullscreen-nav svg {
+		width: 18px;
+		height: 18px;
+	}
+	
+	.fullscreen-prev {
+		left: 0.75rem;
+	}
+	
+	.fullscreen-next {
+		right: 0.75rem;
+	}
+	
+	.fullscreen-content {
+		padding: 0.75rem;
+	}
+	
+	.fullscreen-counter {
+		bottom: 0.75rem;
+		font-size: 0.85rem;
+		padding: 0.4rem 0.8rem;
+	}
+}
+
+/* Tablet optimizations */
+@media (min-width: 481px) and (max-width: 768px) {
+	.gallery-main {
+		height: 380px;
+	}
+
+	.property-title-section h1 {
+		font-size: 1.9rem;
+	}
+
+	.price-amount {
+		font-size: 2.4rem;
+	}
+}
+
+/* Large mobile to small tablet */
+@media (min-width: 481px) and (max-width: 968px) {
+	.property-content-grid {
+		gap: 2.5rem;
+	}
+
+	.info-card,
+	.contact-card {
+		padding: 1.75rem;
 	}
 }
 
