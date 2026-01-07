@@ -62,8 +62,8 @@ if (!property) {
 						</>
 					) : (
 						<>
-							<span class="price-amount">{property.price}</span>
-							<span class="price-unit">€/mois</span>
+					<span class="price-amount">{property.price}</span>
+					<span class="price-unit">€/mois</span>
 						</>
 					)}
 					{property.priceNote && (
@@ -121,7 +121,7 @@ if (!property) {
 										{index === 3 && property.images.length > 5 && (
 											<div class="more-images-overlay">
 												+{property.images.length - 5}
-											</div>
+					</div>
 										)}
 									</div>
 								))}
