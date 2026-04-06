@@ -10,6 +10,7 @@ interface Property {
 	rooms: number;
 	description?: string;
 	shortDescription?: string;
+	/** Full text with blank lines between paragraphs (after normalization from JSON). */
 	longDescription?: string;
 	images?: string[];
 	imagesFolder?: string;
@@ -27,6 +28,22 @@ interface Property {
 	isColocation?: boolean;
 	colocationPrice?: number | string;
 	colocationDetails?: string;
+}
+
+/** Raw shape in `properties.json`: paragraphs as separate strings for easier editing. */
+export type PropertyJson = Omit<Property, 'longDescription'> & {
+	longDescription?: string | string[];
+};
+
+function normalizeLongDescription(
+	desc: string | string[] | undefined
+): string | undefined {
+	if (desc === undefined) return undefined;
+	if (typeof desc === 'string') return desc;
+	return desc
+		.map((p) => p.trim())
+		.filter(Boolean)
+		.join('\n\n');
 }
 
 /**
@@ -63,19 +80,20 @@ async function loadImagesFromFolder(folderName: string): Promise<string[]> {
  * If imagesFolder is specified, loads images from that folder
  * Otherwise uses the existing images array or returns empty array
  */
-export async function processProperties(properties: Property[]): Promise<Property[]> {
+export async function processProperties(properties: PropertyJson[]): Promise<Property[]> {
 	return Promise.all(
 		properties.map(async (property) => {
+			const longDescription = normalizeLongDescription(property.longDescription);
+			const base = { ...property, longDescription };
 			if (property.imagesFolder) {
 				const images = await loadImagesFromFolder(property.imagesFolder);
 				return {
-					...property,
+					...base,
 					images,
 				};
 			}
-			// If no imagesFolder and no images array, return empty array
 			return {
-				...property,
+				...base,
 				images: property.images || [],
 			};
 		})
