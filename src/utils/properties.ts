@@ -28,6 +28,16 @@ interface Property {
 	isColocation?: boolean;
 	colocationPrice?: number | string;
 	colocationDetails?: string;
+	/**
+	 * WGS84 center for an approximate map zone (not exact address).
+	 * `radiusMeters` controls the privacy circle size (default 150 m).
+	 */
+	coordinates?: {
+		lat: number;
+		lng: number;
+		/** Circle radius on the map; omit to use default (~150 m). */
+		radiusMeters?: number;
+	};
 }
 
 /** Raw shape in `properties.json`: paragraphs as separate strings for easier editing. */

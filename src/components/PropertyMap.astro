@@ -1,0 +1,96 @@
+---
+import 'leaflet/dist/leaflet.css';
+
+interface Props {
+	propertyId: string;
+	lat: number;
+	lng: number;
+	title: string;
+	/** Privacy zone radius in meters (default 150). */
+	radiusMeters?: number;
+}
+
+const DEFAULT_RADIUS = 150;
+
+const { propertyId, lat, lng, title, radiusMeters = DEFAULT_RADIUS } = Astro.props;
+const mapId = `property-map-${propertyId}`;
+---
+
+<section id="localisation" class="property-map-section reveal" aria-labelledby={`${mapId}-heading`}>
+	<h2 id={`${mapId}-heading`} class="property-map-heading">Localisation approximative</h2>
+	<p class="property-map-note">
+		Zone indicative — l’adresse exacte n’est pas affichée sur la carte.
+	</p>
+	<div
+		id={mapId}
+		class="property-map-root"
+		role="img"
+		aria-label={`Zone approximative autour de ${title}`}
+		data-lat={lat}
+		data-lng={lng}
+		data-title={title}
+		data-radius-meters={radiusMeters}
+	>
+	</div>
+</section>
+
+<style>
+	.property-map-section {
+		margin-top: 2.5rem;
+		padding-top: 2rem;
+		border-top: 1px solid #eee;
+	}
+
+	.property-map-heading {
+		font-size: 1.5rem;
+		color: #333;
+		margin-bottom: 0.5rem;
+	}
+
+	.property-map-note {
+		font-size: 0.9rem;
+		color: #666;
+		line-height: 1.5;
+		margin: 0 0 1rem;
+	}
+
+	.property-map-root {
+		height: 280px;
+		width: 100%;
+		border-radius: 12px;
+		overflow: hidden;
+		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+		z-index: 0;
+	}
+
+	:global(.property-map-popup) {
+		min-width: 180px;
+	}
+
+	:global(.property-map-popup-note) {
+		margin: 0.5rem 0 0;
+		font-size: 0.82rem;
+		color: #555;
+		line-height: 1.4;
+	}
+
+	@media (min-width: 768px) {
+		.property-map-root {
+			height: 340px;
+		}
+	}
+</style>
+
+<script>
+	import { mountAllPropertyMaps } from '../scripts/property-map-client';
+
+	function boot(): void {
+		mountAllPropertyMaps();
+	}
+
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', boot, { once: true });
+	} else {
+		boot();
+	}
+</script>

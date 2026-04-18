@@ -1,0 +1,520 @@
+---
+const email = 'christophe-lapierre@orange.fr';
+const tel = '+33601767543';
+const telDisplay = '+33 6 01 76 75 43';
+---
+
+<div class="contact-widget" data-contact-widget aria-live="polite">
+	<button
+		type="button"
+		class="contact-widget__fab"
+		id="contact-widget-open"
+		aria-expanded="false"
+		aria-controls="contact-widget-panel"
+	>
+		<svg class="contact-widget__fab-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+			<path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+		</svg>
+		<span class="contact-widget__fab-label">Une question ?</span>
+	</button>
+
+	<div class="contact-widget__backdrop" data-contact-widget-backdrop hidden aria-hidden="true"></div>
+
+	<div
+		class="contact-widget__panel"
+		id="contact-widget-panel"
+		role="dialog"
+		aria-modal="true"
+		aria-labelledby="contact-widget-title"
+		hidden
+	>
+		<header class="contact-widget__header">
+			<div class="contact-widget__header-text">
+				<h2 id="contact-widget-title" class="contact-widget__title">Christophe Lapierre</h2>
+				<p class="contact-widget__subtitle">Locations meublées à Avignon</p>
+			</div>
+			<button
+				type="button"
+				class="contact-widget__close"
+				data-contact-widget-close
+				aria-label="Fermer"
+			>
+				<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+					<line x1="18" y1="6" x2="6" y2="18"/>
+					<line x1="6" y1="6" x2="18" y2="18"/>
+				</svg>
+			</button>
+		</header>
+
+		<div class="contact-widget__messages" data-contact-messages>
+			<div class="contact-widget__bubble contact-widget__bubble--them contact-widget__bubble--pending" data-contact-bubble>
+				<p>Bonjour ! Je suis Christophe Lapierre.</p>
+			</div>
+			<div class="contact-widget__bubble contact-widget__bubble--them contact-widget__bubble--pending" data-contact-bubble>
+				<p>
+					Je propose des logements meublés à Avignon pour étudiants et artistes. Si vous cherchez un studio ou un
+					appartement, je serai ravi d’échanger avec vous.
+				</p>
+			</div>
+			<div class="contact-widget__bubble contact-widget__bubble--them contact-widget__bubble--pending" data-contact-bubble>
+				<p>Ce n’est pas un chat en direct — mais vous pouvez me contacter directement ici :</p>
+			</div>
+			<div class="contact-widget__typing" data-contact-typing hidden>
+				<span class="contact-widget__typing-dot"></span>
+				<span class="contact-widget__typing-dot"></span>
+				<span class="contact-widget__typing-dot"></span>
+			</div>
+		</div>
+
+		<div class="contact-widget__actions contact-widget__actions--pending" data-contact-actions>
+			<a href={`mailto:${email}`} class="contact-widget__btn contact-widget__btn--primary">
+				<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+					<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+					<polyline points="22,6 12,13 2,6"/>
+				</svg>
+				Envoyer un e-mail
+			</a>
+			<a href={`tel:${tel}`} class="contact-widget__btn contact-widget__btn--secondary">
+				<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+					<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+				</svg>
+				{telDisplay}
+			</a>
+		</div>
+	</div>
+</div>
+
+<style>
+	.contact-widget {
+		position: relative;
+		z-index: 9998;
+	}
+
+	.contact-widget__fab {
+		position: fixed;
+		bottom: max(1.25rem, env(safe-area-inset-bottom));
+		right: max(1.25rem, env(safe-area-inset-right));
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.85rem 1.15rem;
+		border: none;
+		border-radius: 999px;
+		cursor: pointer;
+		font-size: 0.95rem;
+		font-weight: 600;
+		color: #fff;
+		background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 55%, #a855f7 100%);
+		box-shadow:
+			0 4px 14px rgba(79, 70, 229, 0.45),
+			0 2px 4px rgba(0, 0, 0, 0.1);
+		transition:
+			transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+			box-shadow 0.25s ease;
+		z-index: 10000;
+	}
+
+	.contact-widget__fab:hover {
+		transform: scale(1.05) translateY(-2px);
+		box-shadow:
+			0 8px 28px rgba(79, 70, 229, 0.5),
+			0 4px 8px rgba(0, 0, 0, 0.12);
+	}
+
+	.contact-widget__fab:focus-visible {
+		outline: 3px solid #c4b5fd;
+		outline-offset: 3px;
+	}
+
+	@media (max-width: 480px) {
+		.contact-widget__fab-label {
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			overflow: hidden;
+			clip: rect(0, 0, 0, 0);
+		}
+
+		.contact-widget__fab {
+			padding: 1rem;
+			border-radius: 50%;
+		}
+	}
+
+	.contact-widget__backdrop {
+		position: fixed;
+		inset: 0;
+		background: rgba(15, 23, 42, 0.45);
+		backdrop-filter: blur(2px);
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 0.3s ease;
+		z-index: 9999;
+	}
+
+	.contact-widget__backdrop.is-open {
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	.contact-widget__panel {
+		position: fixed;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		max-height: min(85vh, 560px);
+		width: 100%;
+		max-width: 400px;
+		margin-left: auto;
+		background: linear-gradient(180deg, #fafbff 0%, #ffffff 100%);
+		border-radius: 16px 16px 0 0;
+		box-shadow: 0 -8px 40px rgba(30, 27, 75, 0.18);
+		display: flex;
+		flex-direction: column;
+		transform: translateY(100%);
+		opacity: 0;
+		pointer-events: none;
+		transition:
+			transform 0.38s cubic-bezier(0.32, 0.72, 0, 1),
+			opacity 0.25s ease;
+		z-index: 10001;
+		border: 1px solid rgba(199, 210, 254, 0.8);
+		border-bottom: none;
+	}
+
+	@media (min-width: 481px) {
+		.contact-widget__panel {
+			left: auto;
+			bottom: max(1rem, env(safe-area-inset-bottom));
+			right: max(1rem, env(safe-area-inset-right));
+			border-radius: 16px;
+			max-height: min(78vh, 520px);
+			border-bottom: 1px solid rgba(199, 210, 254, 0.8);
+			transform: translateY(16px) scale(0.96);
+		}
+	}
+
+	.contact-widget__panel.is-open {
+		transform: translateY(0) scale(1);
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	.contact-widget__header {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: 1rem;
+		padding: 1.1rem 1rem 0.75rem;
+		border-bottom: 1px solid rgba(199, 210, 254, 0.6);
+		background: linear-gradient(135deg, #f5f3ff 0%, #eef2ff 100%);
+		border-radius: 16px 16px 0 0;
+	}
+
+	@media (min-width: 481px) {
+		.contact-widget__header {
+			border-radius: 16px 16px 0 0;
+		}
+	}
+
+	.contact-widget__title {
+		font-size: 1.1rem;
+		font-weight: 700;
+		color: #312e81;
+		margin: 0;
+	}
+
+	.contact-widget__subtitle {
+		font-size: 0.8rem;
+		color: #64748b;
+		margin: 0.2rem 0 0;
+	}
+
+	.contact-widget__close {
+		flex-shrink: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 2.25rem;
+		height: 2.25rem;
+		border: none;
+		border-radius: 10px;
+		background: rgba(255, 255, 255, 0.8);
+		color: #475569;
+		cursor: pointer;
+		transition: background 0.2s ease, color 0.2s ease;
+	}
+
+	.contact-widget__close:hover {
+		background: #e0e7ff;
+		color: #312e81;
+	}
+
+	.contact-widget__messages {
+		flex: 1;
+		overflow-y: auto;
+		padding: 1rem 1rem 0.5rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.65rem;
+		min-height: 120px;
+	}
+
+	.contact-widget__bubble {
+		align-self: flex-start;
+		max-width: 95%;
+		padding: 0.65rem 0.85rem;
+		border-radius: 4px 14px 14px 14px;
+		background: linear-gradient(135deg, #e0e7ff 0%, #f5f3ff 100%);
+		border: 1px solid rgba(165, 180, 252, 0.5);
+		box-shadow: 0 2px 8px rgba(79, 70, 229, 0.06);
+	}
+
+	.contact-widget__bubble--pending {
+		display: none !important;
+	}
+
+	.contact-widget__bubble.is-visible {
+		display: block !important;
+		animation: contactBubbleIn 0.48s cubic-bezier(0.34, 1.2, 0.64, 1) forwards;
+	}
+
+	@keyframes contactBubbleIn {
+		from {
+			opacity: 0;
+			transform: translateY(14px) scale(0.97);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0) scale(1);
+		}
+	}
+
+	.contact-widget__bubble p {
+		margin: 0;
+		font-size: 0.9rem;
+		line-height: 1.55;
+		color: #334155;
+	}
+
+	.contact-widget__typing {
+		align-self: flex-start;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.28rem;
+		padding: 0.75rem 1rem;
+		border-radius: 4px 14px 14px 14px;
+		background: linear-gradient(135deg, #e0e7ff 0%, #f5f3ff 100%);
+		border: 1px solid rgba(165, 180, 252, 0.45);
+		min-height: 2.5rem;
+	}
+
+	.contact-widget__typing[hidden] {
+		display: none !important;
+	}
+
+	.contact-widget__typing-dot {
+		width: 6px;
+		height: 6px;
+		border-radius: 50%;
+		background: #6366f1;
+		animation: contactTypingBounce 1.2s ease-in-out infinite;
+	}
+
+	.contact-widget__typing-dot:nth-child(2) {
+		animation-delay: 0.15s;
+	}
+
+	.contact-widget__typing-dot:nth-child(3) {
+		animation-delay: 0.3s;
+	}
+
+	@keyframes contactTypingBounce {
+		0%,
+		60%,
+		100% {
+			transform: translateY(0);
+			opacity: 0.45;
+		}
+		30% {
+			transform: translateY(-5px);
+			opacity: 1;
+		}
+	}
+
+	.contact-widget__actions {
+		padding: 1rem;
+		padding-bottom: max(1rem, env(safe-area-inset-bottom));
+		display: flex;
+		flex-direction: column;
+		gap: 0.6rem;
+		border-top: 1px solid rgba(226, 232, 240, 0.9);
+		background: #fff;
+		transition: opacity 0.4s ease;
+	}
+
+	.contact-widget__actions--pending {
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	.contact-widget__actions.is-visible {
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	.contact-widget__btn {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.5rem;
+		padding: 0.75rem 1rem;
+		border-radius: 10px;
+		font-size: 0.9rem;
+		font-weight: 600;
+		text-decoration: none;
+		transition:
+			transform 0.2s ease,
+			box-shadow 0.2s ease;
+	}
+
+	.contact-widget__btn--primary {
+		color: #fff;
+		background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+		box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35);
+	}
+
+	.contact-widget__btn--primary:hover {
+		transform: translateY(-1px);
+		box-shadow: 0 6px 18px rgba(79, 70, 229, 0.42);
+	}
+
+	.contact-widget__btn--secondary {
+		color: #4338ca;
+		background: #fff;
+		border: 2px solid #a5b4fc;
+	}
+
+	.contact-widget__btn--secondary:hover {
+		background: #eef2ff;
+		transform: translateY(-1px);
+	}
+</style>
+
+<script>
+	function sleep(ms) {
+		return new Promise((resolve) => setTimeout(resolve, ms));
+	}
+
+	function initContactWidget() {
+		const root = document.querySelector('[data-contact-widget]');
+		if (!root) return;
+
+		const fab = document.getElementById('contact-widget-open');
+		const panel = document.getElementById('contact-widget-panel');
+		const backdrop = document.querySelector('[data-contact-widget-backdrop]');
+		const closeBtn = root.querySelector('[data-contact-widget-close]');
+		const messagesEl = root.querySelector('[data-contact-messages]');
+		const bubbles = root.querySelectorAll('[data-contact-bubble]');
+		const typing = root.querySelector('[data-contact-typing]');
+		const actions = root.querySelector('[data-contact-actions]');
+
+		if (!fab || !panel || !backdrop || !typing || !actions) return;
+
+		let open = false;
+		/** Increment to cancel in-flight “typing” sequence when closing the panel */
+		let sequenceToken = 0;
+
+		function scrollMessagesDown() {
+			if (messagesEl) {
+				messagesEl.scrollTop = messagesEl.scrollHeight;
+			}
+		}
+
+		function resetConversation() {
+			bubbles.forEach((b) => {
+				b.classList.add('contact-widget__bubble--pending');
+				b.classList.remove('is-visible');
+			});
+			typing.hidden = true;
+			actions.classList.add('contact-widget__actions--pending');
+			actions.classList.remove('is-visible');
+		}
+
+		/** Délai “frappe” avant chaque message, puis courte pause avant le suivant */
+		const typingBeforeMs = [650, 950, 750];
+		const pauseAfterBubbleMs = [450, 550, 0];
+
+		async function playConversation(token) {
+			await sleep(320);
+			if (token !== sequenceToken) return;
+
+			for (let i = 0; i < bubbles.length; i++) {
+				if (token !== sequenceToken) return;
+
+				typing.removeAttribute('hidden');
+				typing.hidden = false;
+				scrollMessagesDown();
+				await sleep(typingBeforeMs[i] ?? 700);
+				if (token !== sequenceToken) return;
+
+				typing.hidden = true;
+				bubbles[i].classList.remove('contact-widget__bubble--pending');
+				bubbles[i].classList.add('is-visible');
+				scrollMessagesDown();
+				await sleep(pauseAfterBubbleMs[i] ?? 400);
+			}
+
+			if (token !== sequenceToken) return;
+
+			actions.classList.remove('contact-widget__actions--pending');
+			actions.classList.add('is-visible');
+			scrollMessagesDown();
+		}
+
+		function setOpen(next) {
+			open = next;
+			fab.setAttribute('aria-expanded', next ? 'true' : 'false');
+			panel.toggleAttribute('hidden', !next);
+			backdrop.toggleAttribute('hidden', !next);
+			backdrop.setAttribute('aria-hidden', next ? 'false' : 'true');
+			panel.classList.toggle('is-open', next);
+			backdrop.classList.toggle('is-open', next);
+			document.body.style.overflow = next ? 'hidden' : '';
+
+			if (!next) {
+				sequenceToken += 1;
+				resetConversation();
+				fab.focus();
+				return;
+			}
+
+			sequenceToken += 1;
+			const token = sequenceToken;
+			void playConversation(token);
+
+			window.requestAnimationFrame(() => {
+				closeBtn instanceof HTMLElement && closeBtn.focus();
+			});
+		}
+
+		fab.addEventListener('click', () => setOpen(!open));
+
+		closeBtn?.addEventListener('click', () => setOpen(false));
+
+		backdrop.addEventListener('click', () => setOpen(false));
+
+		document.addEventListener('keydown', (e) => {
+			if (e.key === 'Escape' && open) {
+				e.preventDefault();
+				setOpen(false);
+			}
+		});
+	}
+
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', initContactWidget, { once: true });
+	} else {
+		initContactWidget();
+	}
+</script>

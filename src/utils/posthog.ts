@@ -12,8 +12,10 @@ declare global {
 }
 
 export function trackEvent(eventName: string, properties?: Record<string, any>) {
-	if (typeof window !== 'undefined' && window.posthog) {
-		window.posthog.capture(eventName, properties);
+	if (typeof window === 'undefined') return;
+	const ph = window.posthog as { capture?: (n: string, p?: Record<string, unknown>) => void } | undefined;
+	if (ph && typeof ph.capture === 'function') {
+		ph.capture(eventName, properties);
 	}
 }
 

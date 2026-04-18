@@ -2,16 +2,24 @@
 	display: inline-flex;
 	align-items: center;
 	gap: 0.5rem;
-	color: #667eea;
-	font-weight: 500;
+	color: #5b21b6;
+	font-weight: 600;
 	margin: 2rem 0 1rem;
-	padding: 0.5rem 1rem;
-	border-radius: 8px;
-	transition: background-color 0.2s ease;
+	padding: 0.55rem 1.1rem;
+	border-radius: 10px;
+	border: 1px solid rgba(167, 139, 250, 0.45);
+	background: linear-gradient(135deg, rgba(237, 233, 254, 0.9), rgba(250, 245, 255, 0.95));
+	transition:
+		transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+		box-shadow 0.35s ease,
+		border-color 0.25s ease;
 }
 
 .back-link:hover {
-	background-color: rgba(102, 126, 234, 0.1);
+	background: linear-gradient(135deg, #ede9fe, #fae8ff);
+	transform: translateX(-4px);
+	box-shadow: 0 6px 20px rgba(124, 58, 237, 0.2);
+	border-color: rgba(124, 58, 237, 0.55);
 }
 
 .container {
@@ -37,7 +45,12 @@
 .property-title-section h1 {
 	font-size: 2.5rem;
 	margin-bottom: 0.5rem;
-	color: #333;
+	background: linear-gradient(135deg, #3730a3 0%, #7c3aed 50%, #86198f 100%);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	color: #3730a3;
+	letter-spacing: -0.02em;
 }
 
 .property-address {
@@ -65,10 +78,14 @@
 
 .price-amount {
 	font-size: 3rem;
-	font-weight: 700;
-	color: #667eea;
+	font-weight: 800;
 	display: block;
 	line-height: 1;
+	background: linear-gradient(135deg, #4f46e5, #9333ea, #c026d3);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	color: #4f46e5;
 }
 
 .price-unit {
@@ -444,7 +461,7 @@
 }
 
 .feature-item svg {
-	color: #667eea;
+	color: #7c3aed;
 	flex-shrink: 0;
 }
 
@@ -456,17 +473,28 @@
 
 .info-card,
 .contact-card {
-	background: white;
+	background: linear-gradient(180deg, #ffffff 0%, #fafbff 100%);
 	padding: 2rem;
-	border-radius: 12px;
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	border-radius: 14px;
+	border: 1px solid rgba(199, 210, 254, 0.65);
+	box-shadow:
+		0 4px 6px rgba(79, 70, 229, 0.05),
+		0 12px 28px rgba(99, 102, 241, 0.1);
+	transition: box-shadow 0.35s ease, transform 0.35s ease;
+}
+
+.info-card:hover,
+.contact-card:hover {
+	box-shadow:
+		0 8px 16px rgba(79, 70, 229, 0.08),
+		0 16px 40px rgba(124, 58, 237, 0.12);
 }
 
 .info-card h3,
 .contact-card h3 {
 	font-size: 1.5rem;
 	margin-bottom: 1.5rem;
-	color: #333;
+	color: #3730a3;
 }
 
 .info-item {
@@ -482,7 +510,7 @@
 }
 
 .info-item svg {
-	color: #667eea;
+	color: #7c3aed;
 	flex-shrink: 0;
 }
 
@@ -522,33 +550,36 @@
 	justify-content: center;
 	gap: 0.5rem;
 	padding: 0.875rem 1.5rem;
-	border-radius: 8px;
+	border-radius: 10px;
 	font-weight: 600;
 	text-align: center;
-	transition: transform 0.2s ease, box-shadow 0.2s ease;
+	transition:
+		transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+		box-shadow 0.35s ease;
 	border: none;
 	cursor: pointer;
 	font-size: 1rem;
 }
 
 .btn:hover {
-	transform: translateY(-2px);
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	transform: translateY(-4px) scale(1.02);
+	box-shadow: 0 12px 28px rgba(99, 102, 241, 0.35);
 }
 
 .btn-primary {
-	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	background: linear-gradient(135deg, #6366f1 0%, #7c3aed 50%, #a855f7 100%);
 	color: white;
 }
 
 .btn-secondary {
-	background: white;
-	color: #667eea;
-	border: 2px solid #667eea;
+	background: linear-gradient(180deg, #ffffff, #f5f3ff);
+	color: #5b21b6;
+	border: 2px solid #a78bfa;
 }
 
 .btn-secondary:hover {
-	background: #f8f9ff;
+	background: linear-gradient(180deg, #faf5ff, #ede9fe);
+	box-shadow: 0 10px 24px rgba(167, 139, 250, 0.28);
 }
 
 @media (max-width: 968px) {

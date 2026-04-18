@@ -8,14 +8,12 @@ import { processProperties, type Property } from '../utils/properties';
 import '../styles/index.css';
 
 const properties: Property[] = await processProperties(propertiesData);
-const totalProperties = properties.length;
-const averagePrice = Math.round(properties.reduce((sum, p) => sum + p.price, 0) / properties.length);
 ---
 
 <Layout title="Propriétés à louer">
 	<main>
 		<header class="header">
-			<div class="container">
+			<div class="container reveal">
 				<h1>Découvrez mes logements</h1>
 				<p class="subtitle">Pour étudiants et artistes</p>
 			</div>
@@ -25,19 +23,27 @@ const averagePrice = Math.round(properties.reduce((sum, p) => sum + p.price, 0) 
 			<IntroSection />
 
 			<section class="properties-section">
-				<div class="section-header">
+				<div class="section-header reveal">
 					<h2>Mes biens disponibles</h2>
-					<p>Consultez mon catalogue de propriétés à louer</p>
+					<p>Consultez mon offre de propriétés à louer</p>
 				</div>
 
-				<div class="properties-grid">
-					{properties.map((property) => (
-						<a 
-							href={`/bien/${property.id}`} 
-							class="property-card"
+				<div class="properties-grid reveal-stagger">
+					{properties.map((property, index) => (
+						<article
+							class="property-card reveal-stagger-item"
+							style={`--stagger: ${index}`}
 							data-property-id={property.id}
 							data-property-title={property.title}
 						>
+							<a
+								href={`/bien/${property.id}`}
+								class="property-card__overlay"
+								aria-label={`Voir la fiche : ${property.title}`}
+							>
+								<span class="property-card__overlay-sr">Voir la fiche</span>
+							</a>
+							<div class="property-card__inner">
 							<div class="property-badge">Disponible</div>
 							<div class="property-image">
 								{property.images && property.images.length > 0 ? (
@@ -67,6 +73,18 @@ const averagePrice = Math.round(properties.reduce((sum, p) => sum + p.price, 0) 
 									</svg>
 									{property.address}
 								</p>
+								{property.coordinates && (
+									<a
+										href={`/bien/${property.id}#localisation`}
+										class="property-map-link"
+									>
+										<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+											<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+											<circle cx="12" cy="10" r="3"/>
+										</svg>
+										Voir sur la carte
+									</a>
+								)}
 								<p class="property-description">{property.shortDescription}</p>
 								<div class="property-details">
 									<span class="detail-item">
@@ -87,9 +105,11 @@ const averagePrice = Math.round(properties.reduce((sum, p) => sum + p.price, 0) 
 								</div>
 								{property.features && property.features.length > 0 && (
 									<div class="property-features">
-										{property.features.slice(0, 4).map((feature) => (
-											<span class="feature-tag">{feature}</span>
-										))}
+										{property.features
+											.slice(0, property.id === '7' || property.id === '1'|| property.id === '2' ? 5 : 4)
+											.map((feature) => (
+												<span class="feature-tag">{feature}</span>
+											))}
 									</div>
 								)}
 								<div class="property-price">
@@ -109,7 +129,8 @@ const averagePrice = Math.round(properties.reduce((sum, p) => sum + p.price, 0) 
 									)}
 								</div>
 							</div>
-						</a>
+							</div>
+						</article>
 					))}
 				</div>
 			</section>
@@ -118,22 +139,25 @@ const averagePrice = Math.round(properties.reduce((sum, p) => sum + p.price, 0) 
 			<VisitsSection />
 		</div>
 
-		<footer class="footer">
+		<footer class="footer reveal">
 			<div class="container">
 				<div class="footer-content">
 					<div class="footer-section">
-						<h3>Contact</h3>
-						<p>Pour toute information ou visite, n'hésitez pas à me contacter.</p>
+						<h1>Contact</h1>
+						<h3>Pour toute information ou demande de visite, n'hésitez pas à me solliciter.</h3>
 						<p>
 							<a href="mailto:christophe-lapierre@orange.fr">christophe-lapierre@orange.fr</a>
 						</p>
 						<p>
 							<a href="tel:+33601767543">+33 6 01 76 75 43</a>
 						</p>
+						<p>
+							SIREN 850&nbsp;665&nbsp;159
+						</p>
 					</div>
 				</div>
 				<div class="footer-bottom">
-					<p>&copy; {new Date().getFullYear()} Christophe Lapierre. Tous droits réservés.</p>
+					<h3>&copy; {new Date().getFullYear()} Christophe Lapierre. Tous droits réservés.</h3>
 				</div>
 			</div>
 		</footer>
@@ -146,11 +170,11 @@ const averagePrice = Math.round(properties.reduce((sum, p) => sum + p.price, 0) 
 	events.pageView('home');
 	
 	document.addEventListener('DOMContentLoaded', () => {
-		const propertyCards = document.querySelectorAll('.property-card');
-		propertyCards.forEach((card) => {
-			card.addEventListener('click', () => {
-				const propertyId = card.getAttribute('data-property-id');
-				const propertyTitle = card.getAttribute('data-property-title');
+		document.querySelectorAll('.property-card__overlay').forEach((link) => {
+			link.addEventListener('click', () => {
+				const card = link.closest('.property-card');
+				const propertyId = card?.getAttribute('data-property-id');
+				const propertyTitle = card?.getAttribute('data-property-title');
 				if (propertyId && propertyTitle) {
 					events.propertyCardClicked(propertyId, propertyTitle);
 				}

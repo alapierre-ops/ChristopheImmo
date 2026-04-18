@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import PropertyMap from '../../components/PropertyMap.astro';
 import propertiesData from '../../data/properties.json';
 import { processProperties, type Property } from '../../utils/properties';
 import '../../styles/property-detail.css';
@@ -27,7 +28,7 @@ if (!property) {
 
 <Layout title={property.title}>
 	<main>
-		<a href="/" class="back-link" id="back-link">
+		<a href="/" class="back-link reveal" id="back-link">
 			<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
 				<path d="M19 12H5M12 19l-7-7 7-7"/>
 			</svg>
@@ -35,7 +36,7 @@ if (!property) {
 		</a>
 
 		<div class="container">
-			<div class="property-header">
+			<div class="property-header reveal">
 				<div class="property-title-section">
 					<h1>{property.title}</h1>
 					<p class="property-address">
@@ -73,7 +74,7 @@ if (!property) {
 			</div>
 
 			{property.images && property.images.length > 0 && (
-				<div class="property-gallery">
+				<div class="property-gallery reveal">
 					<div class="gallery-main">
 						<div class="main-image-container" id="main-image-container">
 							<img 
@@ -143,8 +144,8 @@ if (!property) {
 				</div>
 			)}
 
-			<div class="property-content-grid">
-				<div class="property-main">
+			<div class="property-content-grid reveal-stagger">
+				<div class="property-main reveal-stagger-item" style="--stagger: 0">
 					<section class="property-section">
 						<h2>Description</h2>
 						<div class="property-description-text">
@@ -182,9 +183,19 @@ if (!property) {
 							</div>
 						</section>
 					)}
+
+					{property.coordinates && (
+						<PropertyMap
+							propertyId={property.id}
+							lat={property.coordinates.lat}
+							lng={property.coordinates.lng}
+							title={property.title}
+							radiusMeters={property.coordinates.radiusMeters}
+						/>
+					)}
 				</div>
 
-				<aside class="property-sidebar">
+				<aside class="property-sidebar reveal-stagger-item" style="--stagger: 1">
 					<div class="info-card">
 						<h3>Informations</h3>
 						<div class="info-item">
@@ -378,8 +389,10 @@ if (!property) {
 <script define:vars={{ propertyId: property.id, propertyTitle: property.title, propertyImages: property.images }}>
 	// Inline PostHog tracking functions
 	function trackEvent(eventName, properties) {
-		if (typeof window !== 'undefined' && window.posthog) {
-			window.posthog.capture(eventName, properties);
+		if (typeof window === 'undefined') return;
+		const ph = window.posthog;
+		if (ph && typeof ph.capture === 'function') {
+			ph.capture(eventName, properties);
 		}
 	}
 	

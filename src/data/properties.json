@@ -18,13 +18,13 @@
     ],
     "imagesFolder": "Walson",
     "features": [
+      "Lave-linge",
       "Double vitrage",
       "Kitchenette équipée",
-      "Lave-linge",
-      "Digicode + Interphone",
+      "Interphone",
+      "Bureau",
       "Canapé BZ convertible 140 x 190 cm",
       "Vue sur rue calme",
-      "Bureau",
       "2 grands placards avec penderie",
       "Salle d'eau avec toilettes"
     ],
@@ -35,11 +35,16 @@
     "additionalCharges": {
       "deposit": "1050 €"
     },
-    "parking": "Parking Relais des Italiens (gratuit avec navette) ou des Halles (payant) à proximité"
+    "parking": "Parking Relais des Italiens (gratuit avec navette) ou des Halles (payant) à proximité",
+    "coordinates": {
+      "lat": 43.949313978791196,
+      "lng": 4.808818477680259,
+      "radiusMeters": 160
+    }
   },
   {
     "id": "1",
-    "title": "Studio de charme \"El Cubanito\" - intra-muros",
+    "title": "Studio de charme - El Cubanito - intra-muros",
     "address": "Avignon intra-muros, à moins de 500 m du Palais des Papes",
     "price": 505,
     "surface": 22,
@@ -61,16 +66,16 @@
     "imagesFolder": "Cubanito",
     "features": [
       "Ascenseur",
-      "Chauffage collectif inclus",
+      "Vue sur le Palais des Papes",
       "Cuisine équipée",
-      "Digicode + Interphone",
+      "Interphone",
+      "Bureau",
+      "Chauffage collectif inclus",
       "Eau incluse",
       "TEOM incluse",
       "5ème étage sur 6",
-      "Vue sur le Palais des Papes",
       "Lave-linge séchant",
       "TV Led 80 cm",
-      "Coin bureau amovible",
       "Parking à proximité"
     ],
     "priceNote": "Eau, chauffage et TEOM inclus",
@@ -81,7 +86,12 @@
       "edf": "38 €/mois (forfait régularisable) ou à votre charge",
       "deposit": "505 €"
     },
-    "parking": "Parking Relais des Italiens (gratuit avec navette) ou des Halles (payant) à proximité"
+    "parking": "Parking Relais des Italiens (gratuit avec navette) ou des Halles (payant) à proximité",
+    "coordinates": {
+      "lat": 43.94884291985528,
+      "lng": 4.8097865997866975,
+      "radiusMeters": 160
+    }
   },
   {
     "id": "2",
@@ -106,10 +116,11 @@
     ],
     "imagesFolder": "Pontmartin",
     "features": [
-      "Climatisation réversible",
+      "Climatisation",
       "Double vitrage",
       "Cuisine équipée",
-      "Digicode + Interphone",
+      "Interphone",
+      "Coin chambre",
       "TV Led 80 cm",
       "Lave-linge",
       "3ème étage"
@@ -123,7 +134,12 @@
       "internet": "25 €/mois (option SFR)",
       "deposit": "520 €"
     },
-    "parking": "Parking Relais des Italiens (gratuit avec navette) ou des Halles (payant) à proximité"
+    "parking": "Parking Relais des Italiens (gratuit avec navette) ou des Halles (payant) à proximité",
+    "coordinates": {
+      "lat": 43.949313978791196,
+      "lng": 4.808818477680259,
+      "radiusMeters": 160
+    }
   },
   {
     "id": "3",
@@ -145,12 +161,12 @@
     "imagesFolder": "Limas",
     "features": [
       "Climatisation mobile",
-      "Poutres apparentes",
-      "Canapé convertible",
+      "Chambre séparée",
       "Cuisine équipée",
+      "Digicode + Interphone",
+      "Canapé convertible",
       "Lave-linge",
       "TV Led 80 cm",
-      "Digicode + Interphone",
       "2ème étage",
       "WiFi illimité inclus"
     ],
@@ -162,7 +178,12 @@
       "edf": "65 €/mois (forfait à régulariser) ou à votre charge",
       "deposit": "540 €"
     },
-    "parking": "Parking Relais de l'île Piot (gratuit avec navette) ou parkings des Allées de L'Oulle et de L'Oratoire (payant) à proximité"
+    "parking": "Parking Relais de l'île Piot (gratuit avec navette) ou parkings des Allées de L'Oulle et de L'Oratoire (payant) à proximité",
+    "coordinates": {
+      "lat": 43.951347784047464,
+      "lng": 4.804083602254017,
+      "radiusMeters": 160
+    }
   },
   {
     "id": "4",
@@ -192,6 +213,7 @@
       "Climatisation tri-split",
       "Double vitrage",
       "Cuisine séparée",
+      "Digicode + Visiophone",
       "Lave-vaisselle",
       "TV Led 80 cm",
       "Internet FIBRE inclus",
@@ -199,8 +221,7 @@
       "Cave",
       "3ème étage sur 4",
       "Lave-linge",
-      "Stationnement gratuit",
-      "Digicode + Visiophone"
+      "Stationnement gratuit"
     ],
     "priceNote": "Eau, TEOM et WiFi inclus",
     "leaseType": "Bail individuel étudiant ou bail mobilité",
@@ -213,7 +234,12 @@
       "edf": "À votre charge (ou provision 50 €/mois à régulariser)",
       "gdf": "À votre charge (ou provision 50 €/mois à régulariser)"
     },
-    "parking": "Stationnement gratuit à proximité"
+    "parking": "Stationnement gratuit à proximité",
+    "coordinates": {
+      "lat": 43.93990460663144,
+      "lng": 4.801598839671896,
+      "radiusMeters": 160
+    }
   },
   {
     "id": "5",
@@ -244,9 +270,10 @@
     ],
     "imagesFolder": "nationale",
     "features": [
-      "Garage inclus",
       "Climatisation réversible",
+      "Garage inclus",
       "Cuisine US équipée",
+      "Digicode + Visiophone",
       "Lave-vaisselle",
       "Ascenseur",
       "TV écran plat 100 cm",
@@ -255,7 +282,6 @@
       "Local vélos",
       "3ème étage sur 5",
       "Lave-linge",
-      "Digicode + Visiophone",
       "Vue sur le Mont Ventoux"
     ],
     "priceNote": "Eau, TEOM et WiFi inclus",
@@ -268,7 +294,12 @@
     "additionalCharges": {
       "edf": "À votre charge"
     },
-    "parking": "Garage pour véhicule automobile en sous-sol inclus"
+    "parking": "Garage pour véhicule automobile en sous-sol inclus",
+    "coordinates": {
+      "lat": 43.937267046565985,
+      "lng": 4.805000997341781,
+      "radiusMeters": 160
+    }
   },
   {
     "id": "6",
@@ -299,11 +330,11 @@
       "Climatisation tri-split",
       "Double vitrage",
       "Cuisine US équipée",
+      "Digicode + Interphone",
       "Lave-vaisselle",
       "TV écran plat 100 cm",
       "Douche japonaise",
       "2ème étage",
-      "Interphone + Digicode",
       "Lave-linge",
       "WiFi inclus"
     ],
@@ -317,6 +348,11 @@
     "additionalCharges": {
       "edf": "À votre charge"
     },
-    "parking": "Parking des Italiens gratuit à moins de 500 mètres, navette Cityzen circulant au pied de l'immeuble"
+    "parking": "Parking des Italiens gratuit à moins de 500 mètres, navette Cityzen circulant au pied de l'immeuble",
+    "coordinates": {
+      "lat": 43.95113509626175,
+      "lng": 4.814694897342329,
+      "radiusMeters": 160
+    }
   }
 ]
