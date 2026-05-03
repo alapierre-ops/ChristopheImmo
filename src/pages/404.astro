@@ -1,4 +1,56 @@
 ---
-// Redirect to index immediately for any 404
-return Astro.redirect('/');
+import Layout from '../layouts/Layout.astro';
+
+const description =
+	"Cette page n'existe pas ou l'URL a changé. Retournez à l'accueil pour voir les logements à louer à Avignon.";
 ---
+
+<Layout title="Page introuvable" description={description} noIndex>
+	<main class="not-found">
+		<div class="not-found__inner">
+			<h1>Page introuvable</h1>
+			<p>{description}</p>
+			<p>
+				<a href="/">← Retour à l’accueil</a>
+			</p>
+		</div>
+	</main>
+</Layout>
+
+<style>
+	.not-found {
+		min-height: 70vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 2rem 1rem;
+		font-family: system-ui, sans-serif;
+	}
+
+	.not-found__inner {
+		max-width: 28rem;
+		text-align: center;
+	}
+
+	.not-found h1 {
+		font-size: 1.75rem;
+		margin: 0 0 1rem;
+		color: #1c1917;
+	}
+
+	.not-found p {
+		margin: 0.75rem 0;
+		color: #44403c;
+		line-height: 1.55;
+	}
+
+	.not-found a {
+		color: #4338ca;
+		font-weight: 600;
+		text-decoration: none;
+	}
+
+	.not-found a:hover {
+		text-decoration: underline;
+	}
+</style>

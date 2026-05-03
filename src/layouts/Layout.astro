@@ -1,15 +1,42 @@
 ---
 import '../styles/global.css';
 import ContactChatWidget from '../components/ContactChatWidget.astro';
+import { absoluteUrl } from '../utils/seo';
 
 interface Props {
 	title?: string;
+	/** Summary for meta description & OG (plain text). */
+	description: string;
+	/** Path (from site root) or absolute URL for og:image */
+	image?: string;
+	noIndex?: boolean;
+	jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
-const { title = "Propriétés à louer" } = Astro.props;
+const {
+	title = 'Propriétés à louer',
+	description,
+	image = '/logo-christophe-immobilier.png',
+	noIndex = false,
+	jsonLd,
+} = Astro.props;
 
 const POSTHOG_KEY = import.meta.env.PUBLIC_POSTHOG_KEY;
 const POSTHOG_HOST = 'https://eu.i.posthog.com';
+
+const brand = 'Christophe Immobilier';
+const pageTitle = title.includes(brand) ? title : `${title} | ${brand}`;
+
+const canonical =
+	Astro.site !== undefined ? new URL(Astro.url.pathname, Astro.site).href : undefined;
+const ogImage = absoluteUrl(image, Astro.site);
+
+const jsonLdGraphs = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
+const ldPayload =
+	jsonLdGraphs.length > 0 &&
+	JSON.stringify(
+		jsonLdGraphs.length === 1 ? jsonLdGraphs[0] : { '@graph': jsonLdGraphs }
+	).replace(/</g, '\\u003c');
 ---
 
 <!doctype html>
@@ -20,7 +47,26 @@ const POSTHOG_HOST = 'https://eu.i.posthog.com';
 		<link rel="icon" type="image/png" href="/favicon.png" />
 		<link rel="apple-touch-icon" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<title>{pageTitle}</title>
+		<meta name="description" content={description} />
+		{noIndex ? (
+			<meta name="robots" content="noindex, follow" />
+		) : (
+			<meta name="robots" content="index, follow" />
+		)}
+		{canonical && <link rel="canonical" href={canonical} />}
+		<meta property="og:site_name" content={brand} />
+		<meta property="og:title" content={pageTitle} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content="website" />
+		<meta property="og:locale" content="fr_FR" />
+		{canonical && <meta property="og:url" content={canonical} />}
+		{ogImage && <meta property="og:image" content={ogImage} />}
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={pageTitle} />
+		<meta name="twitter:description" content={description} />
+		{ogImage && <meta name="twitter:image" content={ogImage} />}
+		{ldPayload && <script type="application/ld+json" set:html={ldPayload} />}
 	</head>
 	<body>
 		<slot />

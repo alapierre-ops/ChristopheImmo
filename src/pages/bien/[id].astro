@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import PropertyMap from '../../components/PropertyMap.astro';
 import propertiesData from '../../data/properties.json';
 import { processProperties, type Property } from '../../utils/properties';
+import { absoluteUrl, truncateMetaDescription } from '../../utils/seo';
 import '../../styles/property-detail.css';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -24,9 +25,60 @@ const property = properties.find(p => p.id === id);
 if (!property) {
 	return Astro.redirect('/');
 }
+
+const propDescription = truncateMetaDescription(
+	property.shortDescription || property.description || `${property.title} — location à Avignon.`
+);
+const ogImagePath = property.images?.[0] ?? '/logo-christophe-immobilier.png';
+const listingPrice = Number(property.price);
+
+const jsonLdProperty =
+	Astro.site &&
+	({
+		'@context': 'https://schema.org',
+		'@type': 'Apartment',
+		name: property.title,
+		description: propDescription,
+		address: {
+			'@type': 'PostalAddress',
+			streetAddress: property.address,
+			addressLocality: 'Avignon',
+			addressCountry: 'FR',
+		},
+		numberOfRooms: property.rooms,
+		floorSize: {
+			'@type': 'QuantitativeValue',
+			value: property.surface,
+			unitCode: 'MTK',
+		},
+		...(property.images?.length
+			? {
+					image: property.images
+						.map((src) => absoluteUrl(src, Astro.site))
+						.filter((x): x is string => Boolean(x)),
+				}
+			: {}),
+		offers: {
+			'@type': 'Offer',
+			price: listingPrice,
+			priceCurrency: 'EUR',
+			availability: 'https://schema.org/InStock',
+			priceSpecification: {
+				'@type': 'UnitPriceSpecification',
+				price: listingPrice,
+				priceCurrency: 'EUR',
+				unitText: 'MONTH',
+			},
+		},
+	});
 ---
 
-<Layout title={property.title}>
+<Layout
+	title={property.title}
+	description={propDescription}
+	image={ogImagePath}
+	jsonLd={jsonLdProperty ?? undefined}
+>
 	<main>
 		<div class="container property-page-top reveal">
 			<a href="/" class="site-logo-link" aria-label="Christophe Immobilier — accueil">

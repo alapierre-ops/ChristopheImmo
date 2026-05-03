@@ -5,12 +5,49 @@ import IntroSection from '../components/IntroSection.astro';
 import InfoSection from '../components/InfoSection.astro';
 import VisitsSection from '../components/VisitsSection.astro';
 import { processProperties, type Property } from '../utils/properties';
+import { truncateMetaDescription } from '../utils/seo';
 import '../styles/index.css';
 
 const properties: Property[] = await processProperties(propertiesData);
+
+const brand = 'Christophe Immobilier';
+const homeDescription = truncateMetaDescription(
+	'Locations meublées à Avignon pour étudiants et artistes : studios et appartements intra-muros et près des remparts. Consultez les biens disponibles à louer avec Christophe Immobilier.'
+);
+
+const jsonLd = Astro.site
+	? [
+			{
+				'@context': 'https://schema.org',
+				'@type': 'WebSite',
+				name: brand,
+				url: Astro.site.href,
+				description: homeDescription,
+				inLanguage: 'fr-FR',
+			},
+			{
+				'@context': 'https://schema.org',
+				'@type': 'RealEstateAgent',
+				name: brand,
+				url: Astro.site.href,
+				email: 'christophe-lapierre@orange.fr',
+				telephone: '+33601767543',
+				address: {
+					'@type': 'PostalAddress',
+					addressLocality: 'Avignon',
+					addressCountry: 'FR',
+				},
+			},
+		]
+	: undefined;
 ---
 
-<Layout title="Propriétés à louer">
+<Layout
+	title="Propriétés à louer"
+	description={homeDescription}
+	image="/images/hero.jpeg"
+	jsonLd={jsonLd}
+>
 	<main>
 		<header id="accueil" class="header">
 			<div class="container header__layout reveal">
@@ -61,7 +98,12 @@ const properties: Property[] = await processProperties(propertiesData);
 							<div class="property-image">
 								{property.images && property.images.length > 0 ? (
 									<>
-										<img src={property.images[0]} alt={property.title} />
+										<img
+											src={property.images[0]}
+											alt={property.title}
+											loading="lazy"
+											decoding="async"
+										/>
 										{property.images.length > 1 && (
 											<div class="image-count">
 												<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -78,7 +120,7 @@ const properties: Property[] = await processProperties(propertiesData);
 								)}
 							</div>
 							<div class="property-content">
-								<h2 class="property-title">{property.title}</h2>
+								<h3 class="property-title">{property.title}</h3>
 								<p class="property-address">
 									<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
 										<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
@@ -157,7 +199,9 @@ const properties: Property[] = await processProperties(propertiesData);
 				<div class="footer-content">
 					<div class="footer-section">
 						<h2 class="footer-contact-title">Contact</h2>
-						<h3>Pour toute demande d'information ou disponibilité, n'hésitez pas à me solliciter.</h3>
+						<p class="footer-lead">
+							Pour toute demande d'information ou disponibilité, n'hésitez pas à me solliciter.
+						</p>
 						<p class="footer-contact-line">
 							<svg class="footer-contact-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
 								<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
@@ -184,7 +228,9 @@ const properties: Property[] = await processProperties(propertiesData);
 					</div>
 				</div>
 				<div class="footer-bottom">
-					<h3>Copyright &copy; Christophe Immobilier - Tous droits réservés - {new Date().getFullYear()}</h3>
+					<p class="footer-copyright">
+						Copyright &copy; Christophe Immobilier — Tous droits réservés — {new Date().getFullYear()}
+					</p>
 				</div>
 			</div>
 		</footer>

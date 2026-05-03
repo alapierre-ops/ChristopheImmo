@@ -592,9 +592,9 @@ html {
 	text-shadow: 0 2px 18px rgba(0, 0, 0, 0.15);
 }
 
-.footer-section h3 {
+.footer-section .footer-lead {
 	font-size: 1.1rem;
-	margin-bottom: 0.75rem;
+	margin: 0 0 0.75rem;
 	color: #fff;
 	font-weight: 600;
 }
@@ -649,6 +649,14 @@ html {
 	font-size: 0.85rem;
 	position: relative;
 	z-index: 1;
+}
+
+.footer-bottom .footer-copyright {
+	margin: 0;
+	font-weight: 400;
+	font-size: inherit;
+	line-height: 1.5;
+	color: inherit;
 }
 
 @media (max-width: 640px) {
