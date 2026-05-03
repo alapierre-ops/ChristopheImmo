@@ -1,13 +1,19 @@
 ---
 ---
 
-<section class="info-section reveal">
+<section id="a-savoir" class="info-section reveal">
 	<div class="info-content">
 		<div class="info-header">
-			<svg class="info-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-				<circle cx="12" cy="12" r="10"/>
-				<line x1="12" y1="16" x2="12" y2="12"/>
-				<line x1="12" y1="8" x2="12.01" y2="8"/>
+			<svg class="info-icon" width="40" height="40" viewBox="0 0 24 24" aria-hidden="true">
+				<circle cx="12" cy="12" r="10" fill="#4f46e5"/>
+				<circle cx="12" cy="8" r="1.35" fill="#ffffff"/>
+				<path
+					d="M12 11v6"
+					fill="none"
+					stroke="#ffffff"
+					stroke-width="2"
+					stroke-linecap="round"
+				/>
 			</svg>
 			<h3>À savoir</h3>
 		</div>
@@ -22,7 +28,7 @@
 				<svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
 					<polyline points="20 6 9 17 4 12"/>
 				</svg>
-				<span>Une caution émanant d'un tiers physique ou d'un organisme agréé (Visale, Garantme, Cautioneo) est requise lors de la constitution du dossier.</span>
+				<span>Une caution émanant d'un tiers ou d'un organisme agréé (Visale, Garantme, Cautioneo) est nécessaire pour la constitution du dossier.</span>
 			</li>
 		</ul>
 	</div>
@@ -59,8 +65,8 @@
 	}
 
 	.info-icon {
-		color: #667eea;
 		flex-shrink: 0;
+		filter: drop-shadow(0 3px 10px rgba(79, 70, 229, 0.35));
 	}
 
 	.info-content h3 {
@@ -134,6 +140,11 @@
 		.check-icon {
 			width: 18px;
 			height: 18px;
+		}
+
+		.info-icon {
+			width: 34px;
+			height: 34px;
 		}
 	}
 </style>

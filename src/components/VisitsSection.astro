@@ -1,32 +1,43 @@
 ---
 ---
 
-<section class="visits-section reveal">
+<section id="visites" class="visits-section reveal">
 	<div class="visits-content">
 		<div class="visits-header">
-			<svg class="visits-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-				<rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-				<line x1="16" y1="2" x2="16" y2="6"/>
-				<line x1="8" y1="2" x2="8" y2="6"/>
-				<line x1="3" y1="10" x2="21" y2="10"/>
-			</svg>
+			<div class="visits-icon-badge" aria-hidden="true">
+				<svg
+					class="visits-icon"
+					width="28"
+					height="28"
+					viewBox="0 0 24 24"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<!-- Calendrier + horloge (prise de rendez-vous) -->
+					<rect x="3" y="5" width="15" height="14" rx="2" ry="2" stroke="#ffffff" stroke-width="2" />
+					<path d="M8 3v4M13 3v4" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
+					<path d="M3 11h15" stroke="#ffffff" stroke-width="2" />
+					<circle cx="17.5" cy="16.5" r="4.25" stroke="#ffffff" stroke-width="2" />
+					<path d="M17.5 14.75V17l1.25 1" stroke="#ffffff" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
+			</div>
 			<h3>Gestion des visites</h3>
 		</div>
 		<div class="visits-text">
 			<div class="visit-item">
-				<svg class="visit-bullet" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-					<circle cx="12" cy="12" r="10"/>
+				<svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+					<polyline points="20 6 9 17 4 12"/>
 				</svg>
 				<p>
-					Un rendez vous sera organisé rapidement après description détaillée de votre profil (situation précise, niveau d'études ou projet artistique, durée de location envisagée).
+					Une description précise de votre profil (situation actuelle, niveau d'études ou projet artistique, durée de location envisagée) permettra d'organiser rapidement un rendez-vous adapté.
 				</p>
 			</div>
 			<div class="visit-item">
-				<svg class="visit-bullet" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-					<circle cx="12" cy="12" r="10"/>
+				<svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+					<polyline points="20 6 9 17 4 12"/>
 				</svg>
 				<p>
-					Une visite en visioconférence pourra également être proposée en cas d'éloignement géographique justifié.
+					En cas d'éloignement géographique justifié, une visite en visioconférence pourra également être proposée dans les meilleurs délais.
 				</p>
 			</div>
 		</div>
@@ -63,9 +74,23 @@
 		border-bottom: 2px solid #e0e7ff;
 	}
 
-	.visits-icon {
-		color: #8b5cf6;
+	.visits-icon-badge {
 		flex-shrink: 0;
+		width: 52px;
+		height: 52px;
+		border-radius: 50%;
+		background: linear-gradient(145deg, #d946ef 0%, #9333ea 38%, #6366f1 100%);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		box-shadow:
+			0 6px 22px rgba(147, 51, 234, 0.45),
+			inset 0 1px 0 rgba(255, 255, 255, 0.28);
+	}
+
+	.visits-icon {
+		flex-shrink: 0;
+		display: block;
 	}
 
 	.visits-content h3 {
@@ -138,8 +163,19 @@
 		}
 
 		.visit-bullet {
-			width: 14px;
-			height: 14px;
+			width: 16px;
+			height: 16px;
+		}
+
+		.visits-icon-badge {
+			width: 46px;
+			height: 46px;
+			border-radius: 50%;
+		}
+
+		.visits-icon {
+			width: 24px;
+			height: 24px;
 		}
 	}
 </style>

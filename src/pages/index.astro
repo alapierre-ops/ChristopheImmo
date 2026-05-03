@@ -12,17 +12,30 @@ const properties: Property[] = await processProperties(propertiesData);
 
 <Layout title="Propriétés à louer">
 	<main>
-		<header class="header">
-			<div class="container reveal">
-				<h1>Découvrez mes logements</h1>
-				<p class="subtitle">Pour étudiants et artistes</p>
+		<header id="accueil" class="header">
+			<div class="container header__layout reveal">
+				<div class="header__brand">
+					<a href="/" class="header__brand-link" aria-label="Christophe Immobilier — accueil">
+						<img
+							src="/logo-christophe-immobilier.png"
+							alt=""
+							width="500"
+							height="500"
+							decoding="async"
+						/>
+					</a>
+				</div>
+				<div class="header__intro">
+					<h1>Découvrez mes logements</h1>
+					<p class="subtitle">Pour étudiants et artistes</p>
+				</div>
 			</div>
 		</header>
 
 		<div class="container">
 			<IntroSection />
 
-			<section class="properties-section">
+			<section id="biens" class="properties-section">
 				<div class="section-header reveal">
 					<h2>Mes biens disponibles</h2>
 					<p>Consultez mon offre de propriétés à louer</p>
@@ -139,25 +152,39 @@ const properties: Property[] = await processProperties(propertiesData);
 			<VisitsSection />
 		</div>
 
-		<footer class="footer reveal">
+		<footer id="contact" class="footer reveal">
 			<div class="container">
 				<div class="footer-content">
 					<div class="footer-section">
-						<h1>Contact</h1>
-						<h3>Pour toute information ou demande de visite, n'hésitez pas à me solliciter.</h3>
-						<p>
+						<h2 class="footer-contact-title">Contact</h2>
+						<h3>Pour toute demande d'information ou disponibilité, n'hésitez pas à me solliciter.</h3>
+						<p class="footer-contact-line">
+							<svg class="footer-contact-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+								<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+								<polyline points="22,6 12,13 2,6"/>
+							</svg>
 							<a href="mailto:christophe-lapierre@orange.fr">christophe-lapierre@orange.fr</a>
 						</p>
-						<p>
+						<p class="footer-contact-line">
+							<svg class="footer-contact-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+								<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+							</svg>
 							<a href="tel:+33601767543">+33 6 01 76 75 43</a>
 						</p>
-						<p>
-							SIREN 850&nbsp;665&nbsp;159
+						<p class="footer-contact-line">
+							<svg class="footer-contact-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+								<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+								<polyline points="14 2 14 8 20 8"/>
+								<line x1="16" y1="13" x2="8" y2="13"/>
+								<line x1="16" y1="17" x2="8" y2="17"/>
+								<line x1="10" y1="9" x2="8" y2="9"/>
+							</svg>
+							<span>SIREN 850&nbsp;665&nbsp;159</span>
 						</p>
 					</div>
 				</div>
 				<div class="footer-bottom">
-					<h3>&copy; {new Date().getFullYear()} Christophe Lapierre. Tous droits réservés.</h3>
+					<h3>Copyright &copy; Christophe Immobilier - Tous droits réservés - {new Date().getFullYear()}</h3>
 				</div>
 			</div>
 		</footer>
