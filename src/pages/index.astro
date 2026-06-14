@@ -81,18 +81,8 @@ const jsonLd = Astro.site
 				<div class="properties-grid reveal-stagger">
 					{properties.map((property, index) => {
 						const isUnavailable = property.available === false;
-						const showUnavailableHeading =
-							isUnavailable &&
-							(index === 0 || properties[index - 1].available !== false);
 
 						return (
-							<>
-								{showUnavailableHeading && (
-									<div class="unavailable-section-heading reveal-stagger-item" style={`--stagger: ${index}`}>
-										<h3>Biens indisponibles</h3>
-										<p>Ces logements ne sont plus proposés à la location pour le moment.</p>
-									</div>
-								)}
 								<article
 									class:list={[
 										'property-card reveal-stagger-item',
@@ -204,7 +194,6 @@ const jsonLd = Astro.site
 							</div>
 							</div>
 						</article>
-							</>
 						);
 					})}
 				</div>

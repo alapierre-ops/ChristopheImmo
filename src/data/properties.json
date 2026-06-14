@@ -43,6 +43,58 @@
     }
   },
   {
+    "id": "8",
+    "title": "Mini Loft d'Aubanel - intra muros",
+    "address": "Avignon intra-muros, à deux pas du lycée Aubanel et à moins de 500 m du Palais des Papes",
+    "price": 515,
+    "surface": 26,
+    "rooms": 1,
+    "shortDescription": "Mini loft meublé de 26 m² intra-muros, lumineux et au calme côté cour, à proximité du lycée Aubanel. Bail étudiant ou bail mobilité du 01/08/26 au 30/06/27.",
+    "longDescription": [
+      "Vous cherchez un logement pour votre année universitaire ? Vous souhaitez limiter vos trajets après les cours tout en profitant du centre-ville ?",
+      "Découvrez ce mini loft meublé de 26 m² intra-muros, disponible en bail étudiant ou bail mobilité.",
+      "Situé au calme, côté cour, au 1er étage d'un petit immeuble, ce logement bénéficie d'un emplacement privilégié à proximité du Palais des Papes, du Grenier à Sel, du Théâtre des Lucioles et du lycée Aubanel.",
+      "Accès facile en voiture via la porte de la Ligne, avec stationnement payant à proximité.",
+      "L'appartement est très lumineux grâce à sa belle hauteur sous plafond de 3 mètres et se compose de :",
+      "Pièce de vie de 17 m² :\n- 2 couchages : 1 lit mezzanine double + 1 canapé BZ\n- 1 espace bureau avec chaise",
+      "Cuisine équipée de 3,5 m² avec table et 2 chaises.",
+      "Salle d'eau de 3 m² avec WC. Lave-linge inclus.",
+      "Grand dressing aménagé de 2,5 m².",
+      "Disponible du 01/08/2026 au 30/06/2027.",
+      "Location en bail étudiant ou bail mobilité.",
+      "Eau et TEOM incluses dans les charges.",
+      "55 €/mois (forfait à régulariser) ou à votre charge.",
+      "Caution : 515 €"
+    ],
+    "imagesFolder": "Nouveau",
+    "features": [
+      "Lit mezzanine double",
+      "Canapé BZ",
+      "Bureau",
+      "Cuisine équipée",
+      "Lave-linge",
+      "Dressing aménagé",
+      "1er étage côté cour",
+      "Hauteur sous plafond 3 m",
+      "Eau incluse",
+      "TEOM incluse"
+    ],
+    "priceNote": "Eau et TEOM incluses",
+    "leaseType": "Bail étudiant ou bail mobilité",
+    "leasePeriod": "01/08/26 - 30/06/27",
+    "floor": "1er étage",
+    "additionalCharges": {
+      "edf": "55 €/mois (forfait à régulariser) ou à votre charge",
+      "deposit": "515 €"
+    },
+    "parking": "Stationnement payant à proximité, accès voiture via la porte de la Ligne",
+    "coordinates": {
+      "lat": 43.95240005059378,
+      "lng": 4.811652272779256,
+      "radiusMeters": 160
+    }
+  },
+  {
     "id": "1",
     "available": false,
     "title": "Studio de charme - El Cubanito - intra-muros",
