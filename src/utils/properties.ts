@@ -38,6 +38,8 @@ interface Property {
 		/** Circle radius on the map; omit to use default (~150 m). */
 		radiusMeters?: number;
 	};
+	/** Omit or `true` = listed as available; `false` = shown at the bottom as unavailable. */
+	available?: boolean;
 }
 
 /** Raw shape in `properties.json`: paragraphs as separate strings for easier editing. */
@@ -91,7 +93,7 @@ async function loadImagesFromFolder(folderName: string): Promise<string[]> {
  * Otherwise uses the existing images array or returns empty array
  */
 export async function processProperties(properties: PropertyJson[]): Promise<Property[]> {
-	return Promise.all(
+	const processed = await Promise.all(
 		properties.map(async (property) => {
 			const longDescription = normalizeLongDescription(property.longDescription);
 			const base = { ...property, longDescription };
@@ -108,6 +110,13 @@ export async function processProperties(properties: PropertyJson[]): Promise<Pro
 			};
 		})
 	);
+
+	return processed.sort((a, b) => {
+		const aAvailable = a.available !== false;
+		const bAvailable = b.available !== false;
+		if (aAvailable === bAvailable) return 0;
+		return aAvailable ? -1 : 1;
+	});
 }
 
 export type { Property };

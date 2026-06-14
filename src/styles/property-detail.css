@@ -98,6 +98,10 @@
 	font-weight: 600;
 }
 
+.property-badge--unavailable {
+	background: linear-gradient(135deg, #9ca3af 0%, #6b7280 100%);
+}
+
 .property-price-large {
 	text-align: right;
 }

@@ -340,6 +340,52 @@ html {
 	pointer-events: none;
 }
 
+.property-badge--unavailable {
+	background: linear-gradient(135deg, #9ca3af 0%, #6b7280 100%);
+	box-shadow: 0 4px 14px rgba(75, 85, 99, 0.45);
+}
+
+.property-card--unavailable {
+	opacity: 0.72;
+	border-color: rgba(209, 213, 219, 0.9);
+	box-shadow:
+		0 2px 4px rgba(107, 114, 128, 0.06),
+		0 8px 24px rgba(107, 114, 128, 0.08);
+}
+
+.property-card--unavailable .property-image img {
+	filter: grayscale(0.85);
+}
+
+.property-card--unavailable:hover {
+	transform: translateY(-4px) scale(1);
+	box-shadow:
+		0 12px 32px rgba(107, 114, 128, 0.14),
+		0 4px 12px rgba(107, 114, 128, 0.08);
+	border-color: rgba(156, 163, 175, 0.85);
+}
+
+.unavailable-section-heading {
+	grid-column: 1 / -1;
+	margin-top: 1.5rem;
+	padding-top: 2.5rem;
+	border-top: 2px dashed rgba(156, 163, 175, 0.55);
+	text-align: center;
+}
+
+.unavailable-section-heading h3 {
+	margin: 0 0 0.5rem;
+	font-size: 1.5rem;
+	color: #6b7280;
+	font-weight: 700;
+}
+
+.unavailable-section-heading p {
+	margin: 0;
+	font-size: 1rem;
+	color: #9ca3af;
+}
+
 .property-image {
 	width: 100%;
 	height: 240px;

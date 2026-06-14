@@ -20,6 +20,7 @@ export async function getStaticPaths() {
 const { id } = Astro.params;
 const properties: Property[] = await processProperties(propertiesData);
 const property = properties.find(p => p.id === id);
+const isUnavailable = property?.available === false;
 
 // Redirect to index if property doesn't exist
 if (!property) {
@@ -62,7 +63,9 @@ const jsonLdProperty =
 			'@type': 'Offer',
 			price: listingPrice,
 			priceCurrency: 'EUR',
-			availability: 'https://schema.org/InStock',
+			availability: isUnavailable
+				? 'https://schema.org/OutOfStock'
+				: 'https://schema.org/InStock',
 			priceSpecification: {
 				'@type': 'UnitPriceSpecification',
 				price: listingPrice,
@@ -109,7 +112,9 @@ const jsonLdProperty =
 						</svg>
 						{property.address}
 					</p>
-					<div class="property-badge">Disponible</div>
+					<div class:list={['property-badge', { 'property-badge--unavailable': isUnavailable }]}>
+						{isUnavailable ? 'Indisponible' : 'Disponible'}
+					</div>
 				</div>
 				<div class="property-price-large">
 					{property.isColocation ? (

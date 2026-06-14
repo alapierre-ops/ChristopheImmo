@@ -79,13 +79,29 @@ const jsonLd = Astro.site
 				</div>
 
 				<div class="properties-grid reveal-stagger">
-					{properties.map((property, index) => (
-						<article
-							class="property-card reveal-stagger-item"
-							style={`--stagger: ${index}`}
-							data-property-id={property.id}
-							data-property-title={property.title}
-						>
+					{properties.map((property, index) => {
+						const isUnavailable = property.available === false;
+						const showUnavailableHeading =
+							isUnavailable &&
+							(index === 0 || properties[index - 1].available !== false);
+
+						return (
+							<>
+								{showUnavailableHeading && (
+									<div class="unavailable-section-heading reveal-stagger-item" style={`--stagger: ${index}`}>
+										<h3>Biens indisponibles</h3>
+										<p>Ces logements ne sont plus proposés à la location pour le moment.</p>
+									</div>
+								)}
+								<article
+									class:list={[
+										'property-card reveal-stagger-item',
+										{ 'property-card--unavailable': isUnavailable },
+									]}
+									style={`--stagger: ${index}`}
+									data-property-id={property.id}
+									data-property-title={property.title}
+								>
 							<a
 								href={`/bien/${property.id}`}
 								class="property-card__overlay"
@@ -94,7 +110,9 @@ const jsonLd = Astro.site
 								<span class="property-card__overlay-sr">Voir la fiche</span>
 							</a>
 							<div class="property-card__inner">
-							<div class="property-badge">Disponible</div>
+							<div class:list={['property-badge', { 'property-badge--unavailable': isUnavailable }]}>
+								{isUnavailable ? 'Indisponible' : 'Disponible'}
+							</div>
 							<div class="property-image">
 								{property.images && property.images.length > 0 ? (
 									<>
@@ -186,7 +204,9 @@ const jsonLd = Astro.site
 							</div>
 							</div>
 						</article>
-					))}
+							</>
+						);
+					})}
 				</div>
 			</section>
 
