@@ -58,9 +58,14 @@ function normalizeLongDescription(
 		.join('\n\n');
 }
 
+/** Natural numeric order: indus2 before indus10, not between indus19 and indus20. */
+export function compareImageFilenames(a: string, b: string): number {
+	return a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' });
+}
+
 /**
  * Loads images from a folder in the public directory
- * Returns an array of image paths sorted alphabetically
+ * Returns an array of image paths in natural numeric order
  */
 async function loadImagesFromFolder(folderName: string): Promise<string[]> {
 	try {
@@ -71,13 +76,7 @@ async function loadImagesFromFolder(folderName: string): Promise<string[]> {
 		const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.JPG', '.JPEG', '.PNG', '.GIF', '.WEBP'];
 		const imageFiles = files
 			.filter(file => imageExtensions.some(ext => file.toLowerCase().endsWith(ext.toLowerCase())))
-			.sort((a, b) => {
-				// Natural sort: extract numbers and compare
-				const numA = parseInt(a.match(/\d+/)?.[0] || '0');
-				const numB = parseInt(b.match(/\d+/)?.[0] || '0');
-				if (numA !== numB) return numA - numB;
-				return a.localeCompare(b);
-			});
+			.sort(compareImageFilenames);
 		
 		// Return paths relative to public directory
 		return imageFiles.map(file => `/images/${folderName}/${file}`);
