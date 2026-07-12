@@ -56,14 +56,14 @@
       "Situé au calme, côté cour, au 1er étage d'un petit immeuble, ce logement bénéficie d'un emplacement privilégié à proximité du Palais des Papes, du Grenier à Sel, du Théâtre des Lucioles et du lycée Aubanel.",
       "Accès facile en voiture via la porte de la Ligne, avec stationnement payant à proximité.",
       "L'appartement est très lumineux grâce à sa belle hauteur sous plafond de 3 mètres et se compose de :",
-      "Pièce de vie de 17 m² :\n- 2 couchages : 1 lit mezzanine double + 1 canapé BZ\n- 1 espace bureau avec chaise",
-      "Cuisine équipée de 3,5 m² avec table et 2 chaises.",
-      "Salle d'eau de 3 m² avec WC. Lave-linge inclus.",
+      "Pièce de vie de 17 m² :\n- 2 couchages : 1 lit mezzanine double + 1 canapé BZ\n- 1 espace bureau avec chaise\n- 1 table de séjour avec 2 chaises bistro",
+      "Cuisine équipée de 3,5 m².",
+      "Salle d'eau de 3 m² avec coin WC. Lave-linge neuf (1 200 tr/min) inclus.",
       "Grand dressing aménagé de 2,5 m².",
       "Disponible du 01/08/2026 au 30/06/2027.",
       "Location en bail étudiant ou bail mobilité.",
       "Eau et TEOM incluses dans les charges.",
-      "55 €/mois (forfait à régulariser) ou à votre charge.",
+      "EDF : 50 €/mois (forfait à régulariser) ou à votre charge.",
       "Caution : 515 €"
     ],
     "imagesFolder": "Nouveau",
@@ -84,7 +84,7 @@
     "leasePeriod": "01/08/26 - 30/06/27",
     "floor": "1er étage",
     "additionalCharges": {
-      "edf": "55 €/mois (forfait à régulariser) ou à votre charge",
+      "edf": "50 €/mois (forfait à régulariser) ou à votre charge",
       "deposit": "515 €"
     },
     "parking": "Stationnement payant à proximité, accès voiture via la porte de la Ligne",
