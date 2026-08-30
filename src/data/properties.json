@@ -96,7 +96,6 @@
   },
   {
     "id": "1",
-    "available": false,
     "title": "Studio de charme - El Cubanito - intra-muros",
     "address": "Avignon intra-muros, à moins de 500 m du Palais des Papes",
     "price": 505,
@@ -148,7 +147,6 @@
   },
   {
     "id": "2",
-    "available": false,
     "title": "Nid d'Amour intra-muros T2 étudiant(e) prox place Carnot",
     "address": "Avignon intra-muros, à environ 300 m du Palais des Papes",
     "price": 520,
@@ -197,7 +195,6 @@
   },
   {
     "id": "3",
-    "available": false,
     "title": "Traverse du Limas T2 intra-muros étudiant(e) / alternant(e)",
     "address": "Avignon intra-muros, à deux pas du Lycée Mistral et à moins de 300 m du Palais des Papes",
     "price": 540,
